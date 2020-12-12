@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(771, 544)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QWidget {\n"
 "    background-color: rgb(46, 52, 54);\n"
@@ -68,12 +68,12 @@ class Ui_MainWindow(object):
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
-        self.lineEdit = QtWidgets.QLineEdit(self.formWidget)
-        self.lineEdit.setGeometry(QtCore.QRect(30, 150, 240, 30))
+        self.usernameInput = QtWidgets.QLineEdit(self.formWidget)
+        self.usernameInput.setGeometry(QtCore.QRect(30, 150, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet("QLineEdit {\n"
+        self.usernameInput.setFont(font)
+        self.usernameInput.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
@@ -87,14 +87,14 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.lineEdit.setText("")
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.formWidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(30, 190, 240, 30))
+        self.usernameInput.setText("")
+        self.usernameInput.setObjectName("usernameInput")
+        self.passwordInput = QtWidgets.QLineEdit(self.formWidget)
+        self.passwordInput.setGeometry(QtCore.QRect(30, 190, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet("QLineEdit {\n"
+        self.passwordInput.setFont(font)
+        self.passwordInput.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
@@ -108,15 +108,15 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.lineEdit_2.setText("")
-        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.formWidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(30, 230, 240, 30))
+        self.passwordInput.setText("")
+        self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.passwordInput.setObjectName("passwordInput")
+        self.confirmInput = QtWidgets.QLineEdit(self.formWidget)
+        self.confirmInput.setGeometry(QtCore.QRect(30, 230, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("QLineEdit {\n"
+        self.confirmInput.setFont(font)
+        self.confirmInput.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
@@ -130,15 +130,15 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.lineEdit_3.setText("")
-        self.lineEdit_3.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.formWidget)
-        self.lineEdit_4.setGeometry(QtCore.QRect(30, 270, 240, 30))
+        self.confirmInput.setText("")
+        self.confirmInput.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.confirmInput.setObjectName("confirmInput")
+        self.emailInput = QtWidgets.QLineEdit(self.formWidget)
+        self.emailInput.setGeometry(QtCore.QRect(30, 270, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.lineEdit_4.setFont(font)
-        self.lineEdit_4.setStyleSheet("QLineEdit {\n"
+        self.emailInput.setFont(font)
+        self.emailInput.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
@@ -152,10 +152,10 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.lineEdit_4.setText("")
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.pushButton = QtWidgets.QPushButton(self.formWidget)
-        self.pushButton.setGeometry(QtCore.QRect(30, 310, 240, 30))
+        self.emailInput.setText("")
+        self.emailInput.setObjectName("emailInput")
+        self.registerButton = QtWidgets.QPushButton(self.formWidget)
+        self.registerButton.setGeometry(QtCore.QRect(30, 310, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(False)
@@ -165,8 +165,8 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         font.setKerning(True)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton {\n"
+        self.registerButton.setFont(font)
+        self.registerButton.setStyleSheet("QPushButton {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(5, 110, 0);\n"
@@ -174,7 +174,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover {\n"
 "    border: 2px solid rgb(40, 42, 51);\n"
 "}")
-        self.pushButton.setObjectName("pushButton")
+        self.registerButton.setObjectName("registerButton")
         self.horizontalLayout.addWidget(self.formWidget)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -186,8 +186,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "PyQt Music Archive"))
         self.registerLabel.setText(_translate("MainWindow", "Register"))
         self.label.setText(_translate("MainWindow", "Please fill in this form to create an account."))
-        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Username"))
-        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "Confirm Password"))
-        self.lineEdit_4.setPlaceholderText(_translate("MainWindow", "Email"))
-        self.pushButton.setText(_translate("MainWindow", "Register"))
+        self.usernameInput.setPlaceholderText(_translate("MainWindow", "Username"))
+        self.passwordInput.setPlaceholderText(_translate("MainWindow", "Password"))
+        self.confirmInput.setPlaceholderText(_translate("MainWindow", "Confirm Password"))
+        self.emailInput.setPlaceholderText(_translate("MainWindow", "Email"))
+        self.registerButton.setText(_translate("MainWindow", "Register"))
