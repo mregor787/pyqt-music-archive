@@ -1,20 +1,28 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from register_ui import Ui_MainWindow
+from entry_ui import Ui_MainWindow
 
 
-class Register(QMainWindow, Ui_MainWindow):
+class Entry(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setFocus()
+        self.setupButtons()
+
+    def setupButtons(self):
+        self.regToLogButton.clicked.connect(
+            lambda: self.stackedWidget.setCurrentIndex(1)
+        )
+        self.logToRegButton.clicked.connect(
+            lambda: self.stackedWidget.setCurrentIndex(0)
+        )
 
 
 def main():
     app = QApplication(sys.argv)
-    reg = Register()
-    reg.show()
+    en = Entry()
+    en.show()
     sys.exit(app.exec())
 
 
