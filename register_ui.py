@@ -74,14 +74,14 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.usernameInput.setFont(font)
         self.usernameInput.setStyleSheet("QLineEdit {\n"
-"    border: 2px solid rgb(37, 39, 48);\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
 "QLineEdit:hover {\n"
-"    border: 2px solid rgb(40, 42, 51);\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
@@ -95,14 +95,14 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.passwordInput.setFont(font)
         self.passwordInput.setStyleSheet("QLineEdit {\n"
-"    border: 2px solid rgb(37, 39, 48);\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
 "QLineEdit:hover {\n"
-"    border: 2px solid rgb(40, 42, 51);\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
@@ -117,14 +117,14 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.confirmInput.setFont(font)
         self.confirmInput.setStyleSheet("QLineEdit {\n"
-"    border: 2px solid rgb(37, 39, 48);\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
 "QLineEdit:hover {\n"
-"    border: 2px solid rgb(40, 42, 51);\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
@@ -139,14 +139,14 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.emailInput.setFont(font)
         self.emailInput.setStyleSheet("QLineEdit {\n"
-"    border: 2px solid rgb(37, 39, 48);\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
 "QLineEdit:hover {\n"
-"    border: 2px solid rgb(40, 42, 51);\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
@@ -172,7 +172,8 @@ class Ui_MainWindow(object):
 "    background-color: rgb(5, 110, 0);\n"
 "}\n"
 "QPushButton:hover {\n"
-"    border: 2px solid rgb(40, 42, 51);\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
 "}")
         self.registerButton.setObjectName("registerButton")
         self.horizontalLayout.addWidget(self.formWidget)
