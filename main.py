@@ -37,9 +37,8 @@ class Entry(QMainWindow, Ui_MainWindow):
         self.logToRegButton.clicked.connect(
             lambda: self.pageSwitch(self.stackedWidget, 0)
         )
-        self.regButton.clicked.connect(
-            lambda: self.registerUser()
-        )
+        self.regButton.clicked.connect(self.registerUser)
+        self.logButton.clicked.connect(self.loginUser)
 
     def pageSwitch(self, stacked_widget, index):
         for obj in [self.regForm, self.logForm][abs(index - 1)].children():
@@ -59,6 +58,18 @@ class Entry(QMainWindow, Ui_MainWindow):
             return
         self.sql_manager.add_user(username, get_hash(password), email)
         self.pageSwitch(self.stackedWidget, 1)
+
+    def loginUser(self):
+        username = self.logUsernameInput.text()
+        password = self.logPasswordInput.text()
+        if '' in [username, password]:
+            return
+        user = self.sql_manager.get_user(username)
+        if not user:
+            return
+        if user[0]['password_hash'] != get_hash(password):
+            return
+        print('Login successfully!')
 
 
 def main():
