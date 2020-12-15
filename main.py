@@ -27,6 +27,7 @@ class Entry(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.setupButtons()
+        self.centerWindow()
         self.setFocus()
         self.sql_manager = SqlManager('music.db')
 
@@ -39,6 +40,14 @@ class Entry(QMainWindow, Ui_MainWindow):
         )
         self.regButton.clicked.connect(self.registerUser)
         self.logButton.clicked.connect(self.loginUser)
+
+    def centerWindow(self):
+        frame_geometry = self.frameGeometry()
+        desktop = QApplication.desktop()
+        screen = desktop.screenNumber(desktop.cursor().pos())
+        center_point = desktop.screenGeometry(screen).center()
+        frame_geometry.moveCenter(center_point)
+        self.move(frame_geometry.topLeft())
 
     def pageSwitch(self, stacked_widget, index):
         for obj in [self.regForm, self.logForm][abs(index - 1)].children():
