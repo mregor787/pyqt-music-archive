@@ -9,14 +9,19 @@ class Entry(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.setupButtons()
+        self.setFocus()
 
     def setupButtons(self):
         self.regToLogButton.clicked.connect(
-            lambda: self.stackedWidget.setCurrentIndex(1)
+            lambda: self.pageSwitch(self.stackedWidget, 1)
         )
         self.logToRegButton.clicked.connect(
-            lambda: self.stackedWidget.setCurrentIndex(0)
+            lambda: self.pageSwitch(self.stackedWidget, 0)
         )
+
+    def pageSwitch(self, stacked_widget, index):
+        stacked_widget.setCurrentIndex(index)
+        self.setFocus()
 
 
 def main():
