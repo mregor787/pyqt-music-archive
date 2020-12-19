@@ -55,6 +55,8 @@ class Entry(QMainWindow, Ui_MainWindow):
             return
         if password != confirm or not check_password(password):
             return
+        if self.sql_manager.get_user(username):
+            return
         self.sql_manager.add_user(username, get_hash(password), email)
         self.pageSwitch(self.stackedWidget, 1)
 
