@@ -70,4 +70,4 @@ class Entry(QMainWindow, Ui_MainWindow):
             return
         if user[0]['password_hash'] != get_hash(password):
             return
-        print('Login successfully!')
+        self.app.changeWindow('main_menu')

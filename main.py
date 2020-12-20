@@ -1,9 +1,17 @@
 import sys
 
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication
 
 from sql_manager import SqlManager
 from entry import Entry
+from main_menu import MainMenu
+
+
+def get_window(window_name: str):
+    return {
+        'entry': Entry,
+        'main_menu': MainMenu
+    }[window_name]
 
 
 class Application:
@@ -13,9 +21,9 @@ class Application:
         self.current_window.show()
         self.centerCurrentWindow()
 
-    def changeWindow(self, window: QMainWindow):
+    def changeWindow(self, window: str):
         self.current_window.close()
-        self.current_window = window
+        self.current_window = get_window(window)(self)
         self.current_window.show()
         self.centerCurrentWindow()
 
