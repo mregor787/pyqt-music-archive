@@ -43,16 +43,16 @@ class Ui_MainWindow(object):
 "    padding-right: 10px;\n"
 "}")
         self.label.setObjectName("label")
-        self.profileWidget = QtWidgets.QWidget(self.menuWidget)
+        self.profileWidget = QWidgetClickable(self.menuWidget)
         self.profileWidget.setGeometry(QtCore.QRect(70, 180, 230, 180))
-        self.profileWidget.setStyleSheet("#menuWidget > QWidget {\n"
+        self.profileWidget.setStyleSheet("#menuWidget > #profileWidget {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > QWidget:hover {\n"
+"#menuWidget > #profileWidget:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
@@ -76,16 +76,16 @@ class Ui_MainWindow(object):
         self.profileDescription.setStyleSheet("")
         self.profileDescription.setWordWrap(True)
         self.profileDescription.setObjectName("profileDescription")
-        self.searchWidget = QtWidgets.QWidget(self.menuWidget)
+        self.searchWidget = QWidgetClickable(self.menuWidget)
         self.searchWidget.setGeometry(QtCore.QRect(350, 180, 230, 180))
-        self.searchWidget.setStyleSheet("#menuWidget > QWidget {\n"
+        self.searchWidget.setStyleSheet("#menuWidget > #searchWidget {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > QWidget:hover {\n"
+"#menuWidget > #searchWidget:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
@@ -109,58 +109,58 @@ class Ui_MainWindow(object):
         self.searchDescription.setStyleSheet("")
         self.searchDescription.setWordWrap(True)
         self.searchDescription.setObjectName("searchDescription")
-        self.widget_3 = QtWidgets.QWidget(self.menuWidget)
+        self.widget_3 = QWidgetClickable(self.menuWidget)
         self.widget_3.setGeometry(QtCore.QRect(630, 180, 230, 180))
-        self.widget_3.setStyleSheet("#menuWidget > QWidget {\n"
+        self.widget_3.setStyleSheet("#menuWidget > #widget_3 {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > QWidget:hover {\n"
+"#menuWidget > #widget_3:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
         self.widget_3.setObjectName("widget_3")
-        self.widget_4 = QtWidgets.QWidget(self.menuWidget)
+        self.widget_4 = QWidgetClickable(self.menuWidget)
         self.widget_4.setGeometry(QtCore.QRect(70, 410, 230, 180))
-        self.widget_4.setStyleSheet("#menuWidget > QWidget {\n"
+        self.widget_4.setStyleSheet("#menuWidget > #widget_4 {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > QWidget:hover {\n"
+"#menuWidget > #widget_4:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
         self.widget_4.setObjectName("widget_4")
-        self.widget_5 = QtWidgets.QWidget(self.menuWidget)
+        self.widget_5 = QWidgetClickable(self.menuWidget)
         self.widget_5.setGeometry(QtCore.QRect(350, 410, 230, 180))
-        self.widget_5.setStyleSheet("#menuWidget > QWidget {\n"
+        self.widget_5.setStyleSheet("#menuWidget > #widget_5 {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > QWidget:hover {\n"
+"#menuWidget > #widget_5:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
         self.widget_5.setObjectName("widget_5")
-        self.widget_6 = QtWidgets.QWidget(self.menuWidget)
+        self.widget_6 = QWidgetClickable(self.menuWidget)
         self.widget_6.setGeometry(QtCore.QRect(630, 410, 230, 180))
-        self.widget_6.setStyleSheet("#menuWidget > QWidget {\n"
+        self.widget_6.setStyleSheet("#menuWidget > #widget_6 {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > QWidget:hover {\n"
+"#menuWidget > #widget_6:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
@@ -179,3 +179,4 @@ class Ui_MainWindow(object):
         self.profileDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Editing your profile &amp; account info. Privacy settings.</span></p></body></html>"))
         self.searchTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt;\">Search</span></p></body></html>"))
         self.searchDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Search for content in the database, such as tracks, artists, albums, etc.</span></p></body></html>"))
+from qwidget_clickable import QWidgetClickable
