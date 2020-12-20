@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("images/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QWidget {\n"
 "    background-color: rgb(46, 52, 54);\n"
@@ -44,8 +44,6 @@ class Ui_MainWindow(object):
         self.regTitle.setGeometry(QtCore.QRect(80, 10, 140, 60))
         font = QtGui.QFont()
         font.setPointSize(20)
-        font.setBold(False)
-        font.setWeight(50)
         self.regTitle.setFont(font)
         self.regTitle.setStyleSheet("QLabel {\n"
 "    background-color: rgb(130, 130, 130);\n"
@@ -165,13 +163,6 @@ class Ui_MainWindow(object):
         self.regButton.setGeometry(QtCore.QRect(30, 290, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(True)
-        font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.regButton.setFont(font)
         self.regButton.setStyleSheet("QPushButton {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
@@ -207,13 +198,6 @@ class Ui_MainWindow(object):
         self.regToLogButton.setGeometry(QtCore.QRect(195, 353, 98, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(True)
-        font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.regToLogButton.setFont(font)
         self.regToLogButton.setStyleSheet("QPushButton {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
@@ -243,8 +227,6 @@ class Ui_MainWindow(object):
         self.logTitle.setGeometry(QtCore.QRect(90, 10, 120, 70))
         font = QtGui.QFont()
         font.setPointSize(24)
-        font.setBold(False)
-        font.setWeight(50)
         self.logTitle.setFont(font)
         self.logTitle.setStyleSheet("QLabel {\n"
 "    background-color: rgb(130, 130, 130);\n"
@@ -253,7 +235,6 @@ class Ui_MainWindow(object):
 "}")
         self.logTitle.setObjectName("logTitle")
         self.logDescription = QtWidgets.QLabel(self.logForm)
-        self.logDescription.setEnabled(True)
         self.logDescription.setGeometry(QtCore.QRect(30, 80, 241, 40))
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -323,13 +304,6 @@ class Ui_MainWindow(object):
         self.logButton.setGeometry(QtCore.QRect(30, 240, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(True)
-        font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.logButton.setFont(font)
         self.logButton.setStyleSheet("QPushButton {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
@@ -353,7 +327,6 @@ class Ui_MainWindow(object):
         self.logLine_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.logLine_2.setObjectName("logLine_2")
         self.logDescription_2 = QtWidgets.QLabel(self.logForm)
-        self.logDescription_2.setEnabled(True)
         self.logDescription_2.setGeometry(QtCore.QRect(9, 310, 181, 21))
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -366,7 +339,6 @@ class Ui_MainWindow(object):
         self.logDescription_2.setWordWrap(True)
         self.logDescription_2.setObjectName("logDescription_2")
         self.logDescription_3 = QtWidgets.QLabel(self.logForm)
-        self.logDescription_3.setEnabled(True)
         self.logDescription_3.setGeometry(QtCore.QRect(10, 350, 180, 21))
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -382,13 +354,6 @@ class Ui_MainWindow(object):
         self.logToRegButton.setGeometry(QtCore.QRect(190, 307, 100, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(True)
-        font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.logToRegButton.setFont(font)
         self.logToRegButton.setStyleSheet("QPushButton {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
@@ -404,13 +369,6 @@ class Ui_MainWindow(object):
         self.logToRegButton_2.setGeometry(QtCore.QRect(190, 347, 100, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(True)
-        font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.logToRegButton_2.setFont(font)
         self.logToRegButton_2.setStyleSheet("QPushButton {\n"
 "    border: 2px solid rgb(37, 39, 48);\n"
