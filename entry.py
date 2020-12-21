@@ -57,7 +57,7 @@ class Entry(QMainWindow, Ui_MainWindow):
             return
         if self.sql_manager.get_user(username):
             return
-        self.sql_manager.add_user(username, get_hash(password), email)
+        self.sql_manager.add_user(username, get_hash(password), email, 'images/profile.png')
         self.pageSwitch(self.stackedWidget, 1)
 
     def loginUser(self):

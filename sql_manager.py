@@ -17,9 +17,9 @@ class SqlManager:
         col_names = [col[0] for col in res.description]
         return [dict(zip(col_names, row)) for row in res]
 
-    def add_user(self, username: str, pwd_hash: str, email: str):
+    def add_user(self, username: str, pwd_hash: str, email: str, icon_path: str):
         self.cur.execute(
             'INSERT INTO user (username, password_hash, email)'
-            'VALUES (?, ?, ?)', (username, pwd_hash, email)
+            'VALUES (?, ?, ?, ?)', (username, pwd_hash, email, icon_path)
         )
         self.con.commit()
