@@ -1,6 +1,6 @@
 from hashlib import sha256
 
-from PyQt5.QtWidgets import QMainWindow, QLineEdit
+from window import Window
 from entry_ui import Ui_MainWindow
 
 
@@ -20,14 +20,9 @@ def check_password(password: str) -> bool:
     return True
 
 
-class Entry(QMainWindow, Ui_MainWindow):
+class Entry(Window, Ui_MainWindow):
     def __init__(self, app):
-        super().__init__()
-        self.app = app
-        self.sql_manager = app.sql_manager
-        self.setupUi(self)
-        self.setupButtons()
-        self.setFocus()
+        super().__init__(app)
 
     def setupButtons(self):
         self.regToLogButton.clicked.connect(
@@ -38,13 +33,6 @@ class Entry(QMainWindow, Ui_MainWindow):
         )
         self.regButton.clicked.connect(self.registerUser)
         self.logButton.clicked.connect(self.loginUser)
-
-    def pageSwitch(self, stacked_widget, index: int):
-        for obj in [self.regForm, self.logForm][abs(index - 1)].children():
-            if isinstance(obj, QLineEdit):
-                obj.setText('')
-        stacked_widget.setCurrentIndex(index)
-        self.setFocus()
 
     def registerUser(self):
         username = self.regUsernameInput.text()
@@ -70,4 +58,4 @@ class Entry(QMainWindow, Ui_MainWindow):
             return
         if user[0]['password_hash'] != get_hash(password):
             return
-        self.app.changeWindow('main_menu')
+        self.app.changeWindow('main_window')

@@ -4,13 +4,13 @@ from PyQt5.QtWidgets import QApplication
 
 from sql_manager import SqlManager
 from entry import Entry
-from main_menu import MainMenu
+from main_window import MainWindow
 
 
 def get_window(window_name: str):
     return {
         'entry': Entry,
-        'main_menu': MainMenu
+        'main_window': MainWindow
     }[window_name]
 
 
