@@ -45,7 +45,13 @@ class Entry(Window, Ui_MainWindow):
             return
         if self.sql_manager.get_user(username):
             return
-        self.sql_manager.add_user(username, get_hash(password), email, 'images/profile.png')
+        user_data = {
+            'username': username, 'password_hash': get_hash(password),
+            'email': email, 'icon_path': 'images/user_interface/profile.png',
+            'first_name': '', 'last_name': '', 'country': '',
+            'date_of_birth': '', 'profile_type': 'public'
+        }
+        self.sql_manager.add_user(user_data)
         self.pageSwitch(self.stackedWidget, 1)
 
     def loginUser(self):
@@ -56,6 +62,7 @@ class Entry(Window, Ui_MainWindow):
         user = self.sql_manager.get_user(username)
         if not user:
             return
-        if user[0]['password_hash'] != get_hash(password):
+        if user['password_hash'] != get_hash(password):
             return
+        self.app.setUser(user['username'])
         self.app.changeWindow('main_window')
