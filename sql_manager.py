@@ -22,3 +22,11 @@ class SqlManager:
             query, (*(user_data.values()),)
         )
         self.con.commit()
+
+    def update_user(self, username: str, update_data: dict):
+        query = 'UPDATE user SET (' + ', '.join(update_data.keys()) + ') = (' + \
+                ', '.join(['?'] * len(update_data.keys())) + ') WHERE username = ?'
+        self.cur.execute(
+            query, (*(update_data.values()), username)
+        )
+        self.con.commit()
