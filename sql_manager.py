@@ -13,7 +13,8 @@ class SqlManager:
             (username,)
         )
         col_names = [col[0] for col in res.description]
-        return [dict(zip(col_names, row)) for row in res][0]
+        data = [dict(zip(col_names, row)) for row in res]
+        return data[0] if data else []
 
     def add_user(self, user_data: dict):
         query = 'INSERT INTO user (' + ', '.join(user_data.keys()) + ') VALUES (' + \
