@@ -23,6 +23,9 @@ class MainWindow(Window, Ui_MainWindow):
     def toProfile(self):
         self.pageSwitch(self.stackedWidget, 1)
         user = self.sql_manager.get_user(self.app.getUser())
+        self.profileMainTitle.setText(f'''<html><head/><body><p align="center">
+        <span style=" font-size:36pt;">{self.app.getUser()}</span></p></body></html>
+        ''')
         data = {
             'email': self.profileEmailInput,
             'first_name': self.profileFirstNameInput,
