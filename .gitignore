@@ -250,3 +250,6 @@ dmypy.json
 
 # .ui files (they're converted to .py)
 *.ui
+
+# user profile icon
+images/profile_icon.png
