@@ -54,7 +54,7 @@ class MainWindow(Window, Ui_MainWindow):
         source = QFileDialog.getOpenFileName(self, 'Select Image', '', "Image (*.png *.jpg *.jpeg)")[0]
         if not source:
             return
-        destination = 'images/profile_icon.png'
+        destination = 'images/' + self.app.getUser() + '_icon.png'
         Image.open(source).save(destination)
         self.profileIconPic.setPixmap(QPixmap(destination))
         self.sql_manager.update_user(self.app.getUser(), {'icon_path': destination})

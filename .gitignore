@@ -252,4 +252,4 @@ dmypy.json
 *.ui
 
 # user profile icon
-images/profile_icon.png
+images/*_icon.png
