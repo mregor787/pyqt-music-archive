@@ -17,6 +17,7 @@ def get_window(window_name: str):
 class Application:
     def __init__(self):
         self.sql_manager = SqlManager('music.db')
+        self.current_user = ''
         self.current_window = Entry(self)
         self.current_window.show()
         self.centerCurrentWindow()
@@ -35,6 +36,12 @@ class Application:
         center_point = desktop.screenGeometry(screen).center()
         frame_geometry.moveCenter(center_point)
         window.move(frame_geometry.topLeft())
+
+    def setUser(self, user: str):
+        self.current_user = user
+
+    def getUser(self) -> str:
+        return self.current_user
 
 
 def main():
