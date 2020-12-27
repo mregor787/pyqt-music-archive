@@ -1,6 +1,6 @@
 from PIL import Image
 
-from PyQt5.QtWidgets import QFileDialog, QVBoxLayout, QLabel, QWidget
+from PyQt5.QtWidgets import QFileDialog, QVBoxLayout, QLabel, QWidget, QScrollArea
 from PyQt5.QtGui import QPixmap
 
 from qwidget_clickable import QWidgetClickable
@@ -16,8 +16,8 @@ class MainWindow(Window, Ui_MainWindow):
         self.toProfileButton.clicked.connect(self.toProfile)
         self.toSearchButton.clicked.connect(self.toSearch)
         self.exitButton.clicked.connect(self.logout)
-        for btn in [self.profileBackButton, self.searchBackButton,
-                    self.artistBackButton, self.albumBackButton]:
+        for btn in [self.profileBackButton, self.searchBackButton, self.artistBackButton,
+                    self.albumBackButton, self.genreBackButton, self.trackBackButton]:
             btn.clicked.connect(
                 lambda: self.pageSwitch(self.stackedWidget, 0)
             )
@@ -48,6 +48,41 @@ class MainWindow(Window, Ui_MainWindow):
         (self.publicButton if user['profile_type'] == 'public'
          else self.privateButton).setChecked(True)
         self.profileIconPic.setPixmap(QPixmap(user['icon_path']))
+
+    def toTablePage(self, table, data):
+        name = data["name" if table in ['artist', 'genre'] else "title"]
+        page = self.stackedWidget.findChild(QWidget, f'{table}Page')
+        index = self.stackedWidget.indexOf(page)
+        self.pageSwitch(self.stackedWidget, index)
+        widgets = self.getTablePageWidgets(table, page)
+        widgets['main_title'].setText(f'''<html><head/><body><p align="center">
+        <span style=" font-size:36pt;">{name}</span></p></body></html>
+        ''')
+        widgets.pop('main_title')
+        if widgets.get('logo') is not None:
+            widgets['logo'].setPixmap(QPixmap(self.get_logo_path(table, data)))
+        widgets.pop('logo')
+        tables_sql_data = {
+            ('artist', 'albums'): self.sql_manager.get_albums_by_artist(name),
+            ('artist', 'tracks'): self.sql_manager.get_tracks_by_artist(name),
+            ('album', 'tracks'):  self.sql_manager.get_tracks_by_album(name),
+            ('genre', 'tracks'): self.sql_manager.get_tracks_by_genre(name),
+            ('track', 'artist'): self.sql_manager.get_artist_by_track(name),
+            ('track', 'album'): self.sql_manager.get_album_by_track(name),
+            ('track', 'genre'): self.sql_manager.get_genre_by_track(name),
+            ('album', 'artist'): self.sql_manager.get_artist_by_album(name)
+        }
+        for key in widgets:
+            if isinstance(widgets[key], QScrollArea):
+                area_name = key
+                area_table = area_name.replace(table, '').replace('ScrollArea', '').lower()
+                to_scroll_area_data = tables_sql_data[(table, area_table)]
+                self.addDataToScrollArea(to_scroll_area_data, area_table[:-1], widgets[key])
+            else:
+                widget_name = key
+                widget_table = widget_name.replace(table, '').replace('Widget', '').lower()
+                to_widget_data = tables_sql_data[(table, widget_table)][0]
+                self.addDataToWidget(to_widget_data, table, widget_table, widgets[key])
 
     def toSearch(self):
         self.pageSwitch(self.stackedWidget, 2)
@@ -133,55 +168,91 @@ class MainWindow(Window, Ui_MainWindow):
             data = self.get_query_part_data(query, table)
         self.addDataToScrollArea(data, table, self.searchScrollArea)
 
-    def addDataToScrollArea(self, data, table, scroll_area):
+    def addDataToWidget(self, data: dict, page_table: str, widget_table: str, widget: QWidgetClickable):
+        postfix = 'Name' if widget_table in ['artist', 'genre'] else 'Title'
+        label = widget.findChild(QLabel, f'{page_table}{widget_table.capitalize()}' + postfix)
+        label.setText(f'''<html><head/><body><p><span style=" font-size:14pt;">
+        {data[postfix.lower()]}</span></p></body></html>
+        ''')
+        logo = widget.findChild(QLabel, f'{page_table}{widget_table.capitalize()}Logo')
+        logo.setPixmap(QPixmap(self.get_logo_path(widget_table, data)))
+        widget.clicked.connect(
+            lambda: self.toTablePage(widget_table, data)
+        )
+
+    def addDataToScrollArea(self, data: list, table: str, scroll_area: QScrollArea):
         box = scroll_area.widget()
         for obj in box.findChildren(QWidget):
             for child in obj.children():
                 child.deleteLater()
             obj.deleteLater()
         for i, item in enumerate(data):
-            new_widget = QWidgetClickable(box)
-            name = f'search{table.capitalize()}Widget_{i + 1}'
-            new_widget.setObjectName(name)
-            new_widget.setMinimumHeight(80)
-            new_widget.setMaximumHeight(80)
-            table_colors = {
-                'artist': ('rgb(192, 57, 43)', 'rgb(231, 76, 60)'),
-                'album': ('rgb(41, 128, 185)', 'rgb(52, 152, 219)'),
-                'track': ('rgb(39, 174, 96)', 'rgb(46, 204, 113)'),
-                'genre': ('rgb(142, 68, 173)', 'rgb(155, 89, 182)')
-            }
-            new_widget.setStyleSheet(f'''
-            #{name} {{
-                border: 2px solid rgb(37, 39, 48);
-                border-radius: 10px;
-                background-color: {table_colors[table][0]};
-            }}
-            #{name}:hover {{
-                border: 2px solid rgb(60, 62, 71);
-                background-color: {table_colors[table][1]};
-            }}''')
-            box.findChild(QVBoxLayout).addWidget(new_widget)
-            logo = QLabel(new_widget)
-            logo.setGeometry(10, 10, 60, 60)
-            path = 'images/logo/'
-            if table == 'track':
-                artist = self.sql_manager.get_artist_by_track(item["title"])[0]["name"].lower()
-                if item['album'] is not None:
-                    album = self.sql_manager.get_album_by_track(item["title"])[0]["title"].lower()
-                    path += f'album/{artist}_{album}.png'
-                else:
-                    path += f'artist/{artist}.png'
-            elif table == 'album':
-                artist = self.sql_manager.get_artist_by_album(item["title"])[0]["name"].lower()
-                path += f'album/{artist}_{item["title"].lower()}.png'
+            self.createWidgetAndAddToScrollArea(box, table, i, item)
+
+    def createWidgetAndAddToScrollArea(self, box: QWidget, table: str, index: int, item: dict):
+        new_widget = QWidgetClickable(box)
+        name = f'search{table.capitalize()}Widget_{index + 1}'
+        new_widget.setObjectName(name)
+        new_widget.setMinimumHeight(80)
+        new_widget.setMaximumHeight(80)
+        table_colors = {
+            'artist': ('rgb(192, 57, 43)', 'rgb(231, 76, 60)'),
+            'album': ('rgb(41, 128, 185)', 'rgb(52, 152, 219)'),
+            'track': ('rgb(39, 174, 96)', 'rgb(46, 204, 113)'),
+            'genre': ('rgb(142, 68, 173)', 'rgb(155, 89, 182)')
+        }
+        new_widget.setStyleSheet(f'''
+                    #{name} {{
+                        border: 2px solid rgb(37, 39, 48);
+                        border-radius: 10px;
+                        background-color: {table_colors[table][0]};
+                    }}
+                    #{name}:hover {{
+                        border: 2px solid rgb(60, 62, 71);
+                        background-color: {table_colors[table][1]};
+                    }}''')
+        box.findChild(QVBoxLayout).addWidget(new_widget)
+        logo = QLabel(new_widget)
+        logo.setGeometry(10, 10, 60, 60)
+        path = self.get_logo_path(table, item)
+        logo.setPixmap(QPixmap(path))
+        logo.setScaledContents(True)
+        title = QLabel(new_widget)
+        title.setGeometry(75, 10, 415, 60)
+        text = item['name' if table in ['artist', 'genre'] else 'title']
+        title.setText(f'''<html><head/><body><p>
+                    <span style=" font-size:14pt;">{text}</span></p></body></html>
+                    ''')
+        new_widget.clicked.connect(
+            lambda: self.toTablePage(table, item)
+        )
+
+    def get_logo_path(self, table: str, data: dict):
+        path = 'images/logo/'
+        if table == 'track':
+            artist = self.sql_manager.get_artist_by_track(
+                data["title"])[0]["name"].lower()
+            if data['album'] is not None:
+                album = self.sql_manager.get_album_by_track(
+                    data["title"])[0]["title"].lower()
+                path += f'album/{artist}_{album}.png'
             else:
-                path += f'{table}/{item["name"].lower()}.png'
-            logo.setPixmap(QPixmap(path))
-            logo.setScaledContents(True)
-            title = QLabel(new_widget)
-            title.setGeometry(75, 10, 415, 60)
-            text = item['name' if table in ['artist', 'genre'] else 'title']
-            title.setText(f'''<html><head/><body><p>
-            <span style=" font-size:14pt;">{text}</span></p></body></html>
-            ''')
+                path += f'artist/{artist}.png'
+        elif table == 'album':
+            artist = self.sql_manager.get_artist_by_album(
+                data["title"])[0]["name"].lower()
+            path += f'album/{artist}_{data["title"].lower()}.png'
+        else:
+            path += f'{table}/{data["name"].lower()}.png'
+        return path
+
+    def getTablePageWidgets(self, table, page):
+        page_widget = page.findChild(QWidget, f'{table}Widget')
+        widgets = {
+            'main_title': page_widget.findChild(QLabel, f'{table}MainTitle'),
+            'logo': page_widget.findChild(QLabel, f'{table}Logo')
+        }
+        for widget in page_widget.children():
+            if isinstance(widget, QScrollArea) or widget.objectName().endswith('Widget'):
+                widgets[widget.objectName()] = widget
+        return widgets
