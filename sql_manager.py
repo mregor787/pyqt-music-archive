@@ -75,3 +75,38 @@ class SqlManager:
             FROM track WHERE title = ?)''', (track,)
         )
         return self.get_dicts(res)
+
+    def get_genre_by_track(self, track: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM genre WHERE id = (SELECT genre
+            FROM track WHERE title = ?)''', (track,)
+        )
+        return self.get_dicts(res)
+
+    def get_albums_by_artist(self, artist: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM album WHERE artist = (SELECT id
+            FROM artist WHERE name = ?)''', (artist,)
+        )
+        return self.get_dicts(res)
+
+    def get_tracks_by_artist(self, artist: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM track WHERE artist = (SELECT id
+            FROM artist WHERE name = ?)''', (artist,)
+        )
+        return self.get_dicts(res)
+
+    def get_tracks_by_album(self, album: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM track WHERE album = (SELECT id
+            FROM album WHERE title = ?)''', (album,)
+        )
+        return self.get_dicts(res)
+
+    def get_tracks_by_genre(self, genre: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM track WHERE genre = (SELECT id
+            FROM genre WHERE name = ?)''', (genre,)
+        )
+        return self.get_dicts(res)
