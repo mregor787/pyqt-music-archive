@@ -17,9 +17,10 @@ class Window(QMainWindow):
         stacked_widget.setCurrentIndex(index)
         for obj in stacked_widget.currentWidget().findChildren(QLineEdit):
             obj.clear()
-        scroll_area = stacked_widget.currentWidget().findChild(QScrollArea)
-        if scroll_area:
-            for obj in scroll_area.findChild(QWidget).findChildren(QWidget):
+        scroll_areas = stacked_widget.currentWidget().findChildren(QScrollArea)
+        for area in scroll_areas:
+            box = area.widget()
+            for obj in box.findChildren(QWidget):
                 for child in obj.children():
                     child.deleteLater()
                 obj.deleteLater()

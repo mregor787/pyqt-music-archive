@@ -1,8 +1,9 @@
 from PIL import Image
 
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QVBoxLayout, QLabel, QWidget
 from PyQt5.QtGui import QPixmap
 
+from qwidget_clickable import QWidgetClickable
 from window import Window
 from main_window_ui import Ui_MainWindow
 
@@ -130,4 +131,45 @@ class MainWindow(Window, Ui_MainWindow):
                     data = [item for item in data if item in part_data]
         else:
             data = self.get_query_part_data(query, table)
-        print(data)
+        self.addDataToScrollArea(data, table, self.searchScrollArea)
+
+    @staticmethod
+    def addDataToScrollArea(data, table, scroll_area):
+        box = scroll_area.widget()
+        for obj in box.findChildren(QWidget):
+            for child in obj.children():
+                child.deleteLater()
+            obj.deleteLater()
+        for i, item in enumerate(data):
+            new_widget = QWidgetClickable(box)
+            name = f'search{table.capitalize()}Widget_{i + 1}'
+            new_widget.setObjectName(name)
+            new_widget.setMinimumHeight(80)
+            new_widget.setMaximumHeight(80)
+            table_colors = {
+                'artist': ('rgb(192, 57, 43)', 'rgb(231, 76, 60)'),
+                'album': ('rgb(41, 128, 185)', 'rgb(52, 152, 219)'),
+                'track': ('rgb(39, 174, 96)', 'rgb(46, 204, 113)'),
+                'genre': ('rgb(142, 68, 173)', 'rgb(155, 89, 182)')
+            }
+            new_widget.setStyleSheet(f'''
+            #{name} {{
+                border: 2px solid rgb(37, 39, 48);
+                border-radius: 10px;
+                background-color: {table_colors[table][0]};
+            }}
+            #{name}:hover {{
+                border: 2px solid rgb(60, 62, 71);
+                background-color: {table_colors[table][1]};
+            }}''')
+            box.findChild(QVBoxLayout).addWidget(new_widget)
+            logo = QLabel(new_widget)
+            logo.setGeometry(10, 10, 60, 60)
+            logo.setPixmap(QPixmap('images/user_interface/profile.png'))
+            logo.setScaledContents(True)
+            title = QLabel(new_widget)
+            title.setGeometry(75, 10, 415, 60)
+            text = item['name' if table in ['artist', 'genre'] else 'title']
+            title.setText(f'''<html><head/><body><p>
+            <span style=" font-size:14pt;">{text}</span></p></body></html>
+            ''')
