@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
 "}")
         self.regForm.setObjectName("regForm")
         self.regTitle = QtWidgets.QLabel(self.regForm)
-        self.regTitle.setGeometry(QtCore.QRect(80, 10, 140, 60))
+        self.regTitle.setGeometry(QtCore.QRect(70, 9, 160, 70))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.regTitle.setFont(font)
@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
 "}")
         self.regTitle.setObjectName("regTitle")
         self.regDescription = QtWidgets.QLabel(self.regForm)
-        self.regDescription.setGeometry(QtCore.QRect(10, 70, 280, 20))
+        self.regDescription.setGeometry(QtCore.QRect(10, 80, 280, 50))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.regDescription.setFont(font)
@@ -61,9 +61,10 @@ class Ui_MainWindow(object):
 "    padding-left: 5px;\n"
 "    padding-right: 5px;\n"
 "}")
+        self.regDescription.setWordWrap(True)
         self.regDescription.setObjectName("regDescription")
         self.regLine = QtWidgets.QFrame(self.regForm)
-        self.regLine.setGeometry(QtCore.QRect(0, 100, 300, 20))
+        self.regLine.setGeometry(QtCore.QRect(0, 140, 300, 20))
         self.regLine.setStyleSheet("QFrame#regLine {\n"
 "    color: rgb(130, 130, 130);\n"
 "    background-color: rgb(130, 130, 130);\n"
@@ -74,7 +75,7 @@ class Ui_MainWindow(object):
         self.regLine.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.regLine.setObjectName("regLine")
         self.regUsernameInput = QtWidgets.QLineEdit(self.regForm)
-        self.regUsernameInput.setGeometry(QtCore.QRect(30, 130, 240, 30))
+        self.regUsernameInput.setGeometry(QtCore.QRect(30, 170, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.regUsernameInput.setFont(font)
@@ -95,7 +96,7 @@ class Ui_MainWindow(object):
         self.regUsernameInput.setText("")
         self.regUsernameInput.setObjectName("regUsernameInput")
         self.regPasswordInput = QtWidgets.QLineEdit(self.regForm)
-        self.regPasswordInput.setGeometry(QtCore.QRect(30, 170, 240, 30))
+        self.regPasswordInput.setGeometry(QtCore.QRect(30, 210, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.regPasswordInput.setFont(font)
@@ -117,7 +118,7 @@ class Ui_MainWindow(object):
         self.regPasswordInput.setEchoMode(QtWidgets.QLineEdit.Password)
         self.regPasswordInput.setObjectName("regPasswordInput")
         self.confirmInput = QtWidgets.QLineEdit(self.regForm)
-        self.confirmInput.setGeometry(QtCore.QRect(30, 210, 240, 30))
+        self.confirmInput.setGeometry(QtCore.QRect(30, 250, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.confirmInput.setFont(font)
@@ -138,27 +139,6 @@ class Ui_MainWindow(object):
         self.confirmInput.setText("")
         self.confirmInput.setEchoMode(QtWidgets.QLineEdit.Password)
         self.confirmInput.setObjectName("confirmInput")
-        self.emailInput = QtWidgets.QLineEdit(self.regForm)
-        self.emailInput.setGeometry(QtCore.QRect(30, 250, 240, 30))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.emailInput.setFont(font)
-        self.emailInput.setStyleSheet("QLineEdit {\n"
-"    border: 2px solid rgb(30, 32, 41);\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(105, 105, 105);\n"
-"    padding-left: 20px;\n"
-"    padding-right: 20px;\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(60, 62, 71);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(85, 170, 255);\n"
-"    background-color: rgb(115, 115, 115);\n"
-"}")
-        self.emailInput.setText("")
-        self.emailInput.setObjectName("emailInput")
         self.regButton = QtWidgets.QPushButton(self.regForm)
         self.regButton.setGeometry(QtCore.QRect(30, 290, 240, 30))
         font = QtGui.QFont()
@@ -235,7 +215,7 @@ class Ui_MainWindow(object):
 "}")
         self.logTitle.setObjectName("logTitle")
         self.logDescription = QtWidgets.QLabel(self.logForm)
-        self.logDescription.setGeometry(QtCore.QRect(30, 80, 241, 40))
+        self.logDescription.setGeometry(QtCore.QRect(25, 90, 250, 50))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.logDescription.setFont(font)
@@ -247,7 +227,7 @@ class Ui_MainWindow(object):
         self.logDescription.setWordWrap(True)
         self.logDescription.setObjectName("logDescription")
         self.logLine = QtWidgets.QFrame(self.logForm)
-        self.logLine.setGeometry(QtCore.QRect(0, 130, 300, 20))
+        self.logLine.setGeometry(QtCore.QRect(0, 155, 300, 20))
         self.logLine.setStyleSheet("QFrame#logLine {\n"
 "    color: rgb(130, 130, 130);\n"
 "    background-color: rgb(130, 130, 130);\n"
@@ -258,7 +238,7 @@ class Ui_MainWindow(object):
         self.logLine.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.logLine.setObjectName("logLine")
         self.logUsernameInput = QtWidgets.QLineEdit(self.logForm)
-        self.logUsernameInput.setGeometry(QtCore.QRect(30, 160, 240, 30))
+        self.logUsernameInput.setGeometry(QtCore.QRect(30, 190, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.logUsernameInput.setFont(font)
@@ -279,7 +259,7 @@ class Ui_MainWindow(object):
         self.logUsernameInput.setText("")
         self.logUsernameInput.setObjectName("logUsernameInput")
         self.logPasswordInput = QtWidgets.QLineEdit(self.logForm)
-        self.logPasswordInput.setGeometry(QtCore.QRect(30, 200, 240, 30))
+        self.logPasswordInput.setGeometry(QtCore.QRect(30, 230, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.logPasswordInput.setFont(font)
@@ -301,7 +281,7 @@ class Ui_MainWindow(object):
         self.logPasswordInput.setEchoMode(QtWidgets.QLineEdit.Password)
         self.logPasswordInput.setObjectName("logPasswordInput")
         self.logButton = QtWidgets.QPushButton(self.logForm)
-        self.logButton.setGeometry(QtCore.QRect(30, 240, 240, 30))
+        self.logButton.setGeometry(QtCore.QRect(30, 270, 240, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.logButton.setFont(font)
@@ -316,7 +296,7 @@ class Ui_MainWindow(object):
 "}")
         self.logButton.setObjectName("logButton")
         self.logLine_2 = QtWidgets.QFrame(self.logForm)
-        self.logLine_2.setGeometry(QtCore.QRect(0, 280, 300, 20))
+        self.logLine_2.setGeometry(QtCore.QRect(0, 315, 300, 20))
         self.logLine_2.setStyleSheet("QFrame#logLine_2 {\n"
 "    color: rgb(130, 130, 130);\n"
 "    background-color: rgb(130, 130, 130);\n"
@@ -327,7 +307,7 @@ class Ui_MainWindow(object):
         self.logLine_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.logLine_2.setObjectName("logLine_2")
         self.logDescription_2 = QtWidgets.QLabel(self.logForm)
-        self.logDescription_2.setGeometry(QtCore.QRect(9, 310, 181, 21))
+        self.logDescription_2.setGeometry(QtCore.QRect(10, 348, 181, 21))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.logDescription_2.setFont(font)
@@ -338,20 +318,8 @@ class Ui_MainWindow(object):
 "}")
         self.logDescription_2.setWordWrap(True)
         self.logDescription_2.setObjectName("logDescription_2")
-        self.logDescription_3 = QtWidgets.QLabel(self.logForm)
-        self.logDescription_3.setGeometry(QtCore.QRect(10, 350, 180, 21))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.logDescription_3.setFont(font)
-        self.logDescription_3.setStyleSheet("QLabel {\n"
-"    background-color: rgb(130, 130, 130);\n"
-"    padding-left: 5px;\n"
-"    padding-right: 5px;\n"
-"}")
-        self.logDescription_3.setWordWrap(True)
-        self.logDescription_3.setObjectName("logDescription_3")
         self.logToRegButton = QtWidgets.QPushButton(self.logForm)
-        self.logToRegButton.setGeometry(QtCore.QRect(190, 307, 100, 30))
+        self.logToRegButton.setGeometry(QtCore.QRect(190, 345, 100, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.logToRegButton.setFont(font)
@@ -365,21 +333,6 @@ class Ui_MainWindow(object):
 "    background-color: rgb(70, 149, 230);\n"
 "}")
         self.logToRegButton.setObjectName("logToRegButton")
-        self.logToRegButton_2 = QtWidgets.QPushButton(self.logForm)
-        self.logToRegButton_2.setGeometry(QtCore.QRect(190, 347, 100, 30))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.logToRegButton_2.setFont(font)
-        self.logToRegButton_2.setStyleSheet("QPushButton {\n"
-"    border: 2px solid rgb(37, 39, 48);\n"
-"    background-color: rgb(203, 144, 0);\n"
-"    border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    border: 2px solid rgb(60, 62, 71);\n"
-"    background-color: rgb(233, 174, 0);\n"
-"}")
-        self.logToRegButton_2.setObjectName("logToRegButton_2")
         self.horizontalLayout_3.addWidget(self.logForm)
         self.stackedWidget.addWidget(self.loginPage)
         self.horizontalLayout.addWidget(self.stackedWidget)
@@ -392,21 +345,18 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "PyQt Music Archive"))
-        self.regTitle.setText(_translate("MainWindow", "Register"))
-        self.regDescription.setText(_translate("MainWindow", "Please fill in this form to create an account."))
+        self.regTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">Register</span></p></body></html>"))
+        self.regDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">Please fill in this form to create an account in the PyQt Music Archive.</span></p></body></html>"))
         self.regUsernameInput.setPlaceholderText(_translate("MainWindow", "Username"))
         self.regPasswordInput.setPlaceholderText(_translate("MainWindow", "Password"))
         self.confirmInput.setPlaceholderText(_translate("MainWindow", "Confirm Password"))
-        self.emailInput.setPlaceholderText(_translate("MainWindow", "Email"))
         self.regButton.setText(_translate("MainWindow", "Register"))
         self.regDescription_2.setText(_translate("MainWindow", "Already have an account?"))
         self.regToLogButton.setText(_translate("MainWindow", "Login"))
         self.logTitle.setText(_translate("MainWindow", "Login"))
-        self.logDescription.setText(_translate("MainWindow", "<html><head/><body><p>Welcome back! Please, login to access the PyQt Music Archive.</p></body></html>"))
+        self.logDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">Welcome back! Please, login to access the PyQt Music Archive.</span></p></body></html>"))
         self.logUsernameInput.setPlaceholderText(_translate("MainWindow", "Username"))
         self.logPasswordInput.setPlaceholderText(_translate("MainWindow", "Password"))
         self.logButton.setText(_translate("MainWindow", "Login"))
         self.logDescription_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Don\'t have an account?</span></p></body></html>"))
-        self.logDescription_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Forgot your password?</span></p></body></html>"))
         self.logToRegButton.setText(_translate("MainWindow", "Register"))
-        self.logToRegButton_2.setText(_translate("MainWindow", "Reset"))

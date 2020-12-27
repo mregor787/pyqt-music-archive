@@ -38,8 +38,7 @@ class Entry(Window, Ui_MainWindow):
         username = self.regUsernameInput.text()
         password = self.regPasswordInput.text()
         confirm = self.confirmInput.text()
-        email = self.emailInput.text()
-        if '' in [username, password, confirm, email]:
+        if '' in [username, password, confirm]:
             return
         if password != confirm or not check_password(password):
             return
@@ -47,7 +46,7 @@ class Entry(Window, Ui_MainWindow):
             return
         user_data = {
             'username': username, 'password_hash': get_hash(password),
-            'email': email, 'icon_path': 'images/user_interface/profile.png',
+            'email': '', 'icon_path': 'images/user_interface/profile.png',
             'first_name': '', 'last_name': '', 'country': '',
             'date_of_birth': '', 'profile_type': 'public'
         }
