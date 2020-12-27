@@ -1,5 +1,7 @@
 import sqlite3
 
+from typing import List
+
 
 class SqlManager:
     def __init__(self, db_filename: str):
@@ -7,13 +9,18 @@ class SqlManager:
         self.con = sqlite3.connect(db_filename)
         self.cur = self.con.cursor()
 
-    def get_user(self, username: str) -> dict:
+    @staticmethod
+    def get_dicts(res) -> List[dict]:
+        col_names = [col[0] for col in res.description]
+        data = [dict(zip(col_names, row)) for row in res]
+        return data if data else []
+
+    def get_user(self, username: str):
         res = self.cur.execute(
             'SELECT * FROM user WHERE username = ?',
             (username,)
         )
-        col_names = [col[0] for col in res.description]
-        data = [dict(zip(col_names, row)) for row in res]
+        data = self.get_dicts(res)
         return data[0] if data else []
 
     def add_user(self, user_data: dict):
@@ -31,3 +38,19 @@ class SqlManager:
             query, (*(update_data.values()), username)
         )
         self.con.commit()
+
+    def get_all_table_items(self, table: str) -> List[dict]:
+        res = self.cur.execute(f'SELECT * FROM {table}')
+        return self.get_dicts(res)
+
+    def get_table_items_by_partial_title(self, table: str, partial_title: str) -> List[dict]:
+        parameter = 'name' if table in ['artist', 'genre'] else 'title'
+        res = self.cur.execute(
+            f'SELECT * FROM {table} WHERE {parameter} LIKE ?', (f'%{partial_title}%',)
+        )
+        return self.get_dicts(res)
+
+    def get_table_items_by_parameter(self, table: str, parameter: str, value: int, sign: str) -> List[dict]:
+        query = f'SELECT * FROM {table} WHERE {parameter} {sign} ?'
+        res = self.cur.execute(query, (value,))
+        return self.get_dicts(res)

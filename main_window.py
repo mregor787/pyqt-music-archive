@@ -13,12 +13,20 @@ class MainWindow(Window, Ui_MainWindow):
 
     def setupButtons(self):
         self.toProfileButton.clicked.connect(self.toProfile)
-        self.profileBackButton.clicked.connect(
-            lambda: self.pageSwitch(self.stackedWidget, 0)
-        )
+        self.toSearchButton.clicked.connect(self.toSearch)
+        for btn in [self.profileBackButton, self.searchBackButton,
+                    self.artistBackButton, self.albumBackButton]:
+            btn.clicked.connect(
+                lambda: self.pageSwitch(self.stackedWidget, 0)
+            )
+        self.rulesBackButton.clicked.connect(self.toSearch)
         self.profileInfoSaveButton.clicked.connect(self.profileSaveInfo)
         self.privacySaveButton.clicked.connect(self.privacySaveInfo)
         self.changeIconButton.clicked.connect(self.profileChangeIcon)
+        self.searchButton.clicked.connect(self.searchAction)
+        self.searchAboutButton.clicked.connect(
+            lambda: self.pageSwitch(self.stackedWidget, 3)
+        )
 
     def toProfile(self):
         self.pageSwitch(self.stackedWidget, 1)
@@ -38,6 +46,9 @@ class MainWindow(Window, Ui_MainWindow):
         (self.publicButton if user['profile_type'] == 'public'
          else self.privateButton).setChecked(True)
         self.profileIconPic.setPixmap(QPixmap(user['icon_path']))
+
+    def toSearch(self):
+        self.pageSwitch(self.stackedWidget, 2)
 
     def profileSaveInfo(self):
         update_data = {
@@ -61,3 +72,57 @@ class MainWindow(Window, Ui_MainWindow):
         Image.open(source).save(destination)
         self.profileIconPic.setPixmap(QPixmap(destination))
         self.sql_manager.update_user(self.app.getUser(), {'icon_path': destination})
+
+    @staticmethod
+    def get_query_part_type(query_part: str, table: str) -> str:
+        if len(set('><=') & set(query_part)) > 0:
+            if table not in ['album', 'track']:
+                return ''
+            sign = ''.join(c for c in query_part if c in '><=')
+            if sign not in ['=', '==', '>', '<', '>=', '<=']:
+                return ''
+            parameter, value = (x.strip() for x in query_part.split(sign))
+            if parameter != 'year' and table == 'album':
+                return ''
+            if parameter not in ['year', 'duration', 'number']:
+                return ''
+            if not value.isdigit():
+                return ''
+            return 'parameter'
+        return 'title'
+
+    def get_query_part_data(self, query_part, table):
+        data = []
+        if query_part == '*':
+            data = self.sql_manager.get_all_table_items(table)
+        elif self.get_query_part_type(query_part, table) == 'title':
+            data = self.sql_manager.get_table_items_by_partial_title(table, query_part)
+        elif self.get_query_part_type(query_part, table) == 'parameter':
+            sign = ''.join(c for c in query_part if c in '><=')
+            parameter, value = (x.strip() for x in query_part.split(sign))
+            data = self.sql_manager.get_table_items_by_parameter(
+                table, parameter, int(value), sign
+            )
+        return data
+
+    def searchAction(self):
+        self.setFocus()
+        query = self.searchInput.text().strip()
+        if not query:
+            return
+        table = self.searchComboBox.currentText()[:-1].lower()
+        data = []
+        if '&' in query:
+            query_parts = [part.strip() for part in query.split('&')]
+            for part in query_parts:
+                if not self.get_query_part_type(part, table):
+                    return
+            for i, part in enumerate(query_parts):
+                part_data = self.get_query_part_data(part, table)
+                if i == 0:
+                    data = part_data
+                else:
+                    data = [item for item in data if item in part_data]
+        else:
+            data = self.get_query_part_data(query, table)
+        print(data)

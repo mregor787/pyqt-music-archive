@@ -29,6 +29,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
+        self.stackedWidget.setStyleSheet("QWidget#rulesPage {\n"
+"    background-color: rgb(46, 52, 54);\n"
+"}")
         self.stackedWidget.setObjectName("stackedWidget")
         self.menuPage = QtWidgets.QWidget()
         self.menuPage.setStyleSheet("QWidget#menuPage {\n"
@@ -441,6 +444,460 @@ class Ui_MainWindow(object):
         self.profileAboutLabel_3.setObjectName("profileAboutLabel_3")
         self.horizontalLayout_3.addWidget(self.profileWidget)
         self.stackedWidget.addWidget(self.profilePage)
+        self.searchPage = QtWidgets.QWidget()
+        self.searchPage.setStyleSheet("QWidget#searchPage {\n"
+"    background-color: rgb(46, 52, 54);\n"
+"}")
+        self.searchPage.setObjectName("searchPage")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.searchPage)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.searchWidget = QtWidgets.QWidget(self.searchPage)
+        self.searchWidget.setMaximumSize(QtCore.QSize(930, 690))
+        self.searchWidget.setStyleSheet("QWidget#searchWidget {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    border: 1px solid rgb(37, 39, 48);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.searchWidget.setObjectName("searchWidget")
+        self.searchMainTitle = QtWidgets.QLabel(self.searchWidget)
+        self.searchMainTitle.setGeometry(QtCore.QRect(280, 10, 370, 70))
+        self.searchMainTitle.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.searchMainTitle.setObjectName("searchMainTitle")
+        self.searchInput = QtWidgets.QLineEdit(self.searchWidget)
+        self.searchInput.setGeometry(QtCore.QRect(180, 90, 660, 40))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.searchInput.setFont(font)
+        self.searchInput.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 20px;\n"
+"    background-color: rgb(105, 105, 105);\n"
+"    padding-left: 20px;\n"
+"    padding-right: 20px;\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(85, 170, 255);\n"
+"    background-color: rgb(115, 115, 115);\n"
+"}")
+        self.searchInput.setObjectName("searchInput")
+        self.searchAboutWidget = QtWidgets.QWidget(self.searchWidget)
+        self.searchAboutWidget.setGeometry(QtCore.QRect(25, 190, 320, 370))
+        self.searchAboutWidget.setStyleSheet("#searchAboutWidget {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.searchAboutWidget.setObjectName("searchAboutWidget")
+        self.searchAboutLabel_1 = QtWidgets.QLabel(self.searchAboutWidget)
+        self.searchAboutLabel_1.setGeometry(QtCore.QRect(10, 10, 300, 45))
+        self.searchAboutLabel_1.setWordWrap(True)
+        self.searchAboutLabel_1.setObjectName("searchAboutLabel_1")
+        self.searchAboutLabel_2 = QtWidgets.QLabel(self.searchAboutWidget)
+        self.searchAboutLabel_2.setGeometry(QtCore.QRect(10, 55, 300, 110))
+        self.searchAboutLabel_2.setWordWrap(True)
+        self.searchAboutLabel_2.setObjectName("searchAboutLabel_2")
+        self.searchAboutLabel_3 = QtWidgets.QLabel(self.searchAboutWidget)
+        self.searchAboutLabel_3.setGeometry(QtCore.QRect(10, 165, 280, 130))
+        self.searchAboutLabel_3.setStyleSheet("")
+        self.searchAboutLabel_3.setWordWrap(True)
+        self.searchAboutLabel_3.setObjectName("searchAboutLabel_3")
+        self.searchAboutButton = QtWidgets.QPushButton(self.searchAboutWidget)
+        self.searchAboutButton.setGeometry(QtCore.QRect(80, 312, 160, 40))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.searchAboutButton.setFont(font)
+        self.searchAboutButton.setStyleSheet("#searchAboutButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(30, 109, 207);\n"
+"}\n"
+"#searchAboutButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(70, 149, 230);\n"
+"}")
+        self.searchAboutButton.setObjectName("searchAboutButton")
+        self.searchTitle_1 = QtWidgets.QLabel(self.searchWidget)
+        self.searchTitle_1.setGeometry(QtCore.QRect(45, 140, 280, 40))
+        self.searchTitle_1.setObjectName("searchTitle_1")
+        self.searchScrollArea = QtWidgets.QScrollArea(self.searchWidget)
+        self.searchScrollArea.setGeometry(QtCore.QRect(365, 190, 540, 480))
+        self.searchScrollArea.setStyleSheet("QScrollBar {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}\n"
+"#searchScrollArea {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.searchScrollArea.setWidgetResizable(True)
+        self.searchScrollArea.setObjectName("searchScrollArea")
+        self.searchScrollAreaWidgetContents = QtWidgets.QWidget()
+        self.searchScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 536, 476))
+        self.searchScrollAreaWidgetContents.setStyleSheet("#searchScrollAreaWidgetContents {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}")
+        self.searchScrollAreaWidgetContents.setObjectName("searchScrollAreaWidgetContents")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.searchScrollAreaWidgetContents)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.searchScrollArea.setWidget(self.searchScrollAreaWidgetContents)
+        self.searchTitle_2 = QtWidgets.QLabel(self.searchWidget)
+        self.searchTitle_2.setGeometry(QtCore.QRect(495, 140, 280, 40))
+        self.searchTitle_2.setObjectName("searchTitle_2")
+        self.searchBackButton = QtWidgets.QPushButton(self.searchWidget)
+        self.searchBackButton.setGeometry(QtCore.QRect(20, 620, 160, 50))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.searchBackButton.setFont(font)
+        self.searchBackButton.setStyleSheet("#searchBackButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"#searchBackButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.searchBackButton.setObjectName("searchBackButton")
+        self.searchButton = QWidgetClickable(self.searchWidget)
+        self.searchButton.setGeometry(QtCore.QRect(849, 90, 56, 40))
+        self.searchButton.setStyleSheet("#searchButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 20px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"#searchButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.searchButton.setObjectName("searchButton")
+        self.searchPic = QtWidgets.QLabel(self.searchButton)
+        self.searchPic.setGeometry(QtCore.QRect(13, 5, 30, 30))
+        self.searchPic.setText("")
+        self.searchPic.setPixmap(QtGui.QPixmap("images/user_interface/search.png"))
+        self.searchPic.setScaledContents(True)
+        self.searchPic.setObjectName("searchPic")
+        self.searchTitle_3 = QtWidgets.QLabel(self.searchWidget)
+        self.searchTitle_3.setGeometry(QtCore.QRect(30, 60, 140, 20))
+        self.searchTitle_3.setObjectName("searchTitle_3")
+        self.searchComboBox = QtWidgets.QComboBox(self.searchWidget)
+        self.searchComboBox.setGeometry(QtCore.QRect(30, 90, 140, 40))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.searchComboBox.setFont(font)
+        self.searchComboBox.setStyleSheet("#searchComboBox {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}\n"
+"#searchComboBox:hover {\n"
+"    background-color: rgb(115, 115, 115);\n"
+"}")
+        self.searchComboBox.setObjectName("searchComboBox")
+        self.searchComboBox.addItem("")
+        self.searchComboBox.addItem("")
+        self.searchComboBox.addItem("")
+        self.searchComboBox.addItem("")
+        self.horizontalLayout_4.addWidget(self.searchWidget)
+        self.stackedWidget.addWidget(self.searchPage)
+        self.rulesPage = QtWidgets.QWidget()
+        self.rulesPage.setObjectName("rulesPage")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.rulesPage)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.rulesWidget = QtWidgets.QWidget(self.rulesPage)
+        self.rulesWidget.setMaximumSize(QtCore.QSize(930, 690))
+        self.rulesWidget.setStyleSheet("QWidget#rulesWidget {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    border: 1px solid rgb(37, 39, 48);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.rulesWidget.setObjectName("rulesWidget")
+        self.rulesMainTitle = QtWidgets.QLabel(self.rulesWidget)
+        self.rulesMainTitle.setGeometry(QtCore.QRect(5, 10, 920, 90))
+        self.rulesMainTitle.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.rulesMainTitle.setObjectName("rulesMainTitle")
+        self.rulesBackButton = QtWidgets.QPushButton(self.rulesWidget)
+        self.rulesBackButton.setGeometry(QtCore.QRect(20, 620, 160, 50))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.rulesBackButton.setFont(font)
+        self.rulesBackButton.setStyleSheet("#rulesBackButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"#rulesBackButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.rulesBackButton.setObjectName("rulesBackButton")
+        self.rulesWidget_1 = QtWidgets.QWidget(self.rulesWidget)
+        self.rulesWidget_1.setGeometry(QtCore.QRect(40, 160, 310, 110))
+        self.rulesWidget_1.setStyleSheet("#rulesWidget_1 {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.rulesWidget_1.setObjectName("rulesWidget_1")
+        self.rulesLabel_1 = QtWidgets.QLabel(self.rulesWidget_1)
+        self.rulesLabel_1.setGeometry(QtCore.QRect(9, 10, 291, 90))
+        self.rulesLabel_1.setWordWrap(True)
+        self.rulesLabel_1.setObjectName("rulesLabel_1")
+        self.rulesTitle_1 = QtWidgets.QLabel(self.rulesWidget)
+        self.rulesTitle_1.setGeometry(QtCore.QRect(40, 90, 570, 45))
+        self.rulesTitle_1.setWordWrap(True)
+        self.rulesTitle_1.setObjectName("rulesTitle_1")
+        self.rulesWidget_2 = QtWidgets.QWidget(self.rulesWidget)
+        self.rulesWidget_2.setGeometry(QtCore.QRect(370, 160, 520, 200))
+        self.rulesWidget_2.setStyleSheet("#rulesWidget_2 {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.rulesWidget_2.setObjectName("rulesWidget_2")
+        self.rulesLabel_2 = QtWidgets.QLabel(self.rulesWidget_2)
+        self.rulesLabel_2.setGeometry(QtCore.QRect(9, 10, 500, 180))
+        self.rulesLabel_2.setWordWrap(True)
+        self.rulesLabel_2.setObjectName("rulesLabel_2")
+        self.rulesWidget_3 = QtWidgets.QWidget(self.rulesWidget)
+        self.rulesWidget_3.setGeometry(QtCore.QRect(40, 290, 310, 70))
+        self.rulesWidget_3.setStyleSheet("#rulesWidget_3 {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.rulesWidget_3.setObjectName("rulesWidget_3")
+        self.rulesLabel_3 = QtWidgets.QLabel(self.rulesWidget_3)
+        self.rulesLabel_3.setGeometry(QtCore.QRect(9, 10, 290, 50))
+        self.rulesLabel_3.setWordWrap(True)
+        self.rulesLabel_3.setObjectName("rulesLabel_3")
+        self.rulesWidget_4 = QtWidgets.QWidget(self.rulesWidget)
+        self.rulesWidget_4.setGeometry(QtCore.QRect(40, 380, 600, 90))
+        self.rulesWidget_4.setStyleSheet("#rulesWidget_4 {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.rulesWidget_4.setObjectName("rulesWidget_4")
+        self.rulesLabel_4 = QtWidgets.QLabel(self.rulesWidget_4)
+        self.rulesLabel_4.setGeometry(QtCore.QRect(9, 10, 580, 70))
+        self.rulesLabel_4.setWordWrap(True)
+        self.rulesLabel_4.setObjectName("rulesLabel_4")
+        self.horizontalLayout_7.addWidget(self.rulesWidget)
+        self.stackedWidget.addWidget(self.rulesPage)
+        self.artistPage = QtWidgets.QWidget()
+        self.artistPage.setStyleSheet("QWidget#artistPage {\n"
+"    background-color: rgb(46, 52, 54);\n"
+"}")
+        self.artistPage.setObjectName("artistPage")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.artistPage)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.artistWidget = QtWidgets.QWidget(self.artistPage)
+        self.artistWidget.setMaximumSize(QtCore.QSize(930, 690))
+        self.artistWidget.setStyleSheet("QWidget#artistWidget {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    border: 1px solid rgb(37, 39, 48);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.artistWidget.setObjectName("artistWidget")
+        self.artistMainTitle = QtWidgets.QLabel(self.artistWidget)
+        self.artistMainTitle.setGeometry(QtCore.QRect(5, 10, 920, 90))
+        self.artistMainTitle.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.artistMainTitle.setObjectName("artistMainTitle")
+        self.artistLogo = QtWidgets.QLabel(self.artistWidget)
+        self.artistLogo.setGeometry(QtCore.QRect(50, 170, 160, 160))
+        self.artistLogo.setText("")
+        self.artistLogo.setPixmap(QtGui.QPixmap("images/user_interface/profile.png"))
+        self.artistLogo.setScaledContents(True)
+        self.artistLogo.setObjectName("artistLogo")
+        self.artistAlbumsScrollArea = QtWidgets.QScrollArea(self.artistWidget)
+        self.artistAlbumsScrollArea.setGeometry(QtCore.QRect(255, 170, 650, 200))
+        self.artistAlbumsScrollArea.setStyleSheet("#artistAlbumsScrollArea {\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.artistAlbumsScrollArea.setWidgetResizable(True)
+        self.artistAlbumsScrollArea.setObjectName("artistAlbumsScrollArea")
+        self.artistAlbumsScrollAreaWidgetContents = QtWidgets.QWidget()
+        self.artistAlbumsScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 646, 196))
+        self.artistAlbumsScrollAreaWidgetContents.setStyleSheet("#artistAlbumsScrollAreaWidgetContents {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}")
+        self.artistAlbumsScrollAreaWidgetContents.setObjectName("artistAlbumsScrollAreaWidgetContents")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.artistAlbumsScrollAreaWidgetContents)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.artistAlbumsScrollArea.setWidget(self.artistAlbumsScrollAreaWidgetContents)
+        self.artistTitle_2 = QtWidgets.QLabel(self.artistWidget)
+        self.artistTitle_2.setGeometry(QtCore.QRect(470, 100, 220, 50))
+        self.artistTitle_2.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.artistTitle_2.setObjectName("artistTitle_2")
+        self.artistBackButton = QtWidgets.QPushButton(self.artistWidget)
+        self.artistBackButton.setGeometry(QtCore.QRect(20, 620, 160, 50))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.artistBackButton.setFont(font)
+        self.artistBackButton.setStyleSheet("#artistBackButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"#artistBackButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.artistBackButton.setObjectName("artistBackButton")
+        self.artistTitle_1 = QtWidgets.QLabel(self.artistWidget)
+        self.artistTitle_1.setGeometry(QtCore.QRect(20, 100, 220, 50))
+        self.artistTitle_1.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.artistTitle_1.setObjectName("artistTitle_1")
+        self.artistTracksScrollArea = QtWidgets.QScrollArea(self.artistWidget)
+        self.artistTracksScrollArea.setGeometry(QtCore.QRect(255, 460, 650, 200))
+        self.artistTracksScrollArea.setStyleSheet("#artistTracksScrollArea {\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.artistTracksScrollArea.setWidgetResizable(True)
+        self.artistTracksScrollArea.setObjectName("artistTracksScrollArea")
+        self.artistTracksScrollAreaWidgetContents = QtWidgets.QWidget()
+        self.artistTracksScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 646, 196))
+        self.artistTracksScrollAreaWidgetContents.setStyleSheet("#artistTracksScrollAreaWidgetContents {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}")
+        self.artistTracksScrollAreaWidgetContents.setObjectName("artistTracksScrollAreaWidgetContents")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.artistTracksScrollAreaWidgetContents)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.artistTracksScrollArea.setWidget(self.artistTracksScrollAreaWidgetContents)
+        self.artistTitle_3 = QtWidgets.QLabel(self.artistWidget)
+        self.artistTitle_3.setGeometry(QtCore.QRect(470, 390, 220, 50))
+        self.artistTitle_3.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.artistTitle_3.setObjectName("artistTitle_3")
+        self.horizontalLayout_5.addWidget(self.artistWidget)
+        self.stackedWidget.addWidget(self.artistPage)
+        self.albumPage = QtWidgets.QWidget()
+        self.albumPage.setStyleSheet("QWidget#albumPage {\n"
+"    background-color: rgb(46, 52, 54);\n"
+"}")
+        self.albumPage.setObjectName("albumPage")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.albumPage)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.albumWidget = QtWidgets.QWidget(self.albumPage)
+        self.albumWidget.setMaximumSize(QtCore.QSize(930, 690))
+        self.albumWidget.setStyleSheet("QWidget#albumWidget {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    border: 1px solid rgb(37, 39, 48);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.albumWidget.setObjectName("albumWidget")
+        self.albumMainTitle = QtWidgets.QLabel(self.albumWidget)
+        self.albumMainTitle.setGeometry(QtCore.QRect(5, 10, 920, 90))
+        self.albumMainTitle.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.albumMainTitle.setObjectName("albumMainTitle")
+        self.albumLogo = QtWidgets.QLabel(self.albumWidget)
+        self.albumLogo.setGeometry(QtCore.QRect(50, 170, 160, 160))
+        self.albumLogo.setText("")
+        self.albumLogo.setPixmap(QtGui.QPixmap("images/user_interface/profile.png"))
+        self.albumLogo.setScaledContents(True)
+        self.albumLogo.setObjectName("albumLogo")
+        self.albumBackButton = QtWidgets.QPushButton(self.albumWidget)
+        self.albumBackButton.setGeometry(QtCore.QRect(20, 620, 160, 50))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.albumBackButton.setFont(font)
+        self.albumBackButton.setStyleSheet("#albumBackButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"#albumBackButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.albumBackButton.setObjectName("albumBackButton")
+        self.albumTitle_1 = QtWidgets.QLabel(self.albumWidget)
+        self.albumTitle_1.setGeometry(QtCore.QRect(20, 100, 220, 50))
+        self.albumTitle_1.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.albumTitle_1.setObjectName("albumTitle_1")
+        self.albumArtistWidget = QWidgetClickable(self.albumWidget)
+        self.albumArtistWidget.setGeometry(QtCore.QRect(330, 170, 500, 80))
+        self.albumArtistWidget.setStyleSheet("#albumArtistWidget {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(192, 57, 43);\n"
+"}\n"
+"#albumArtistWidget:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(231, 76, 60);\n"
+"}")
+        self.albumArtistWidget.setObjectName("albumArtistWidget")
+        self.albumArtistLogo = QtWidgets.QLabel(self.albumArtistWidget)
+        self.albumArtistLogo.setGeometry(QtCore.QRect(10, 10, 60, 60))
+        self.albumArtistLogo.setText("")
+        self.albumArtistLogo.setPixmap(QtGui.QPixmap("images/user_interface/profile.png"))
+        self.albumArtistLogo.setScaledContents(True)
+        self.albumArtistLogo.setObjectName("albumArtistLogo")
+        self.albumArtistName = QtWidgets.QLabel(self.albumArtistWidget)
+        self.albumArtistName.setGeometry(QtCore.QRect(75, 10, 415, 60))
+        self.albumArtistName.setWordWrap(True)
+        self.albumArtistName.setObjectName("albumArtistName")
+        self.albumTitle_2 = QtWidgets.QLabel(self.albumWidget)
+        self.albumTitle_2.setGeometry(QtCore.QRect(470, 100, 220, 50))
+        self.albumTitle_2.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.albumTitle_2.setObjectName("albumTitle_2")
+        self.albumTitle_3 = QtWidgets.QLabel(self.albumWidget)
+        self.albumTitle_3.setGeometry(QtCore.QRect(470, 270, 220, 50))
+        self.albumTitle_3.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.albumTitle_3.setObjectName("albumTitle_3")
+        self.albumTracksScrollArea = QtWidgets.QScrollArea(self.albumWidget)
+        self.albumTracksScrollArea.setGeometry(QtCore.QRect(255, 340, 650, 320))
+        self.albumTracksScrollArea.setStyleSheet("#albumTracksScrollArea {\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.albumTracksScrollArea.setWidgetResizable(True)
+        self.albumTracksScrollArea.setObjectName("albumTracksScrollArea")
+        self.albumTracksScrollAreaWidgetContents = QtWidgets.QWidget()
+        self.albumTracksScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 646, 316))
+        self.albumTracksScrollAreaWidgetContents.setStyleSheet("#albumTracksScrollAreaWidgetContents {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}")
+        self.albumTracksScrollAreaWidgetContents.setObjectName("albumTracksScrollAreaWidgetContents")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.albumTracksScrollAreaWidgetContents)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.albumTracksScrollArea.setWidget(self.albumTracksScrollAreaWidgetContents)
+        self.horizontalLayout_6.addWidget(self.albumWidget)
+        self.stackedWidget.addWidget(self.albumPage)
         self.horizontalLayout.addWidget(self.stackedWidget)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -489,4 +946,36 @@ class Ui_MainWindow(object):
         self.profileAboutLabel_1.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">There is some information about profile types:</span></p></body></html>"))
         self.profileAboutLabel_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">- Public profile: other users can see all of your saved profile info.</span></p></body></html>"))
         self.profileAboutLabel_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">- Private profile: other users can see nothing but your username &amp; profile icon.</span></p></body></html>"))
+        self.searchMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Search</span></p></body></html>"))
+        self.searchInput.setPlaceholderText(_translate("MainWindow", "Enter your search query"))
+        self.searchAboutLabel_1.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">There are some rules about how to make your search queries.</span></p></body></html>"))
+        self.searchAboutLabel_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">- You can search for tracks, albums, artists or genres by titles. For example, &quot;rock&quot; will give you tracks, albums, etc., that contain &quot;rock&quot; in their titles or names.</span></p></body></html>"))
+        self.searchAboutLabel_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">- To specify your query you can use some numeric parameters. For example: &quot;year &gt; 2000&quot; gives you albums or tracks after 2000; &quot;duration &lt;= 100&quot; - tracks no longer than 100 seconds, etc.</span></p></body></html>"))
+        self.searchAboutButton.setText(_translate("MainWindow", "Read full rules"))
+        self.searchTitle_1.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt;\">Search Rules</span></p></body></html>"))
+        self.searchTitle_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt;\">Result Table</span></p></body></html>"))
+        self.searchBackButton.setText(_translate("MainWindow", "Back to Main Menu"))
+        self.searchTitle_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">Choose a search group</span></p></body></html>"))
+        self.searchComboBox.setItemText(0, _translate("MainWindow", "Artists"))
+        self.searchComboBox.setItemText(1, _translate("MainWindow", "Albums"))
+        self.searchComboBox.setItemText(2, _translate("MainWindow", "Genres"))
+        self.searchComboBox.setItemText(3, _translate("MainWindow", "Tracks"))
+        self.rulesMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Search Rules</span></p></body></html>"))
+        self.rulesBackButton.setText(_translate("MainWindow", "Back to Search"))
+        self.rulesLabel_1.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">You can search for tracks, albums, artists or genres by titles. For example, &quot;rock&quot; will give you objects, that contain &quot;rock&quot; in their titles or names.</span></p></body></html>"))
+        self.rulesTitle_1.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">There are some rules about how to make your search queries.</span></p></body></html>"))
+        self.rulesLabel_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">To specify your query you can use some numeric parameters. For albums there is a &quot;year&quot; parameter; for tracks there are &quot;year&quot;, &quot;duration&quot; and &quot;number&quot; (in album). For example: &quot;year &gt; 2000&quot; gives you albums or tracks after 2000; &quot;duration &lt;= 100&quot; - tracks no longer than 100 seconds, etc. Need to mention, writing such parameters without &quot;&gt;&lt;=&quot; signs and digits will be interpreted as title query. For example, &quot;year&quot; gives you objects with &quot;year&quot; in title.</span></p></body></html>"))
+        self.rulesLabel_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">You can enter &quot;*&quot; in search field to get all objects from selected group.</span></p></body></html>"))
+        self.rulesLabel_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">You can combine multiple queries into one using &quot;&amp;&quot;. For example, &quot;rock&amp;year &gt; 2000&quot; gives you albums or tracks after 2000 with &quot;rock&quot; in title.</span></p></body></html>"))
+        self.artistMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Artist</span></p></body></html>"))
+        self.artistTitle_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Albums</span></p></body></html>"))
+        self.artistBackButton.setText(_translate("MainWindow", "Back to Main Menu"))
+        self.artistTitle_1.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Logo</span></p></body></html>"))
+        self.artistTitle_3.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Tracks</span></p></body></html>"))
+        self.albumMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Album</span></p></body></html>"))
+        self.albumBackButton.setText(_translate("MainWindow", "Back to Main Menu"))
+        self.albumTitle_1.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Logo</span></p></body></html>"))
+        self.albumArtistName.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">ArtistName</span></p></body></html>"))
+        self.albumTitle_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Artist</span></p></body></html>"))
+        self.albumTitle_3.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Tracks</span></p></body></html>"))
 from qwidget_clickable import QWidgetClickable
