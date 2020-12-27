@@ -21,7 +21,5 @@ class Window(QMainWindow):
         for area in scroll_areas:
             box = area.widget()
             for obj in box.findChildren(QWidget):
-                for child in obj.children():
-                    child.deleteLater()
                 obj.deleteLater()
         self.setFocus()

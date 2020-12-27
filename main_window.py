@@ -176,16 +176,13 @@ class MainWindow(Window, Ui_MainWindow):
         ''')
         logo = widget.findChild(QLabel, f'{page_table}{widget_table.capitalize()}Logo')
         logo.setPixmap(QPixmap(self.get_logo_path(widget_table, data)))
+        widget.disconnect()
         widget.clicked.connect(
             lambda: self.toTablePage(widget_table, data)
         )
 
     def addDataToScrollArea(self, data: list, table: str, scroll_area: QScrollArea):
         box = scroll_area.widget()
-        for obj in box.findChildren(QWidget):
-            for child in obj.children():
-                child.deleteLater()
-            obj.deleteLater()
         for i, item in enumerate(data):
             self.createWidgetAndAddToScrollArea(box, table, i, item)
 
