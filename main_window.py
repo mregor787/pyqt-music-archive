@@ -133,8 +133,7 @@ class MainWindow(Window, Ui_MainWindow):
             data = self.get_query_part_data(query, table)
         self.addDataToScrollArea(data, table, self.searchScrollArea)
 
-    @staticmethod
-    def addDataToScrollArea(data, table, scroll_area):
+    def addDataToScrollArea(self, data, table, scroll_area):
         box = scroll_area.widget()
         for obj in box.findChildren(QWidget):
             for child in obj.children():
@@ -165,7 +164,20 @@ class MainWindow(Window, Ui_MainWindow):
             box.findChild(QVBoxLayout).addWidget(new_widget)
             logo = QLabel(new_widget)
             logo.setGeometry(10, 10, 60, 60)
-            logo.setPixmap(QPixmap('images/user_interface/profile.png'))
+            path = 'images/logo/'
+            if table == 'track':
+                artist = self.sql_manager.get_artist_by_track(item["title"])[0]["name"].lower()
+                if item['album'] is not None:
+                    album = self.sql_manager.get_album_by_track(item["title"])[0]["title"].lower()
+                    path += f'album/{artist}_{album}.png'
+                else:
+                    path += f'artist/{artist}.png'
+            elif table == 'album':
+                artist = self.sql_manager.get_artist_by_album(item["title"])[0]["name"].lower()
+                path += f'album/{artist}_{item["title"].lower()}.png'
+            else:
+                path += f'{table}/{item["name"].lower()}.png'
+            logo.setPixmap(QPixmap(path))
             logo.setScaledContents(True)
             title = QLabel(new_widget)
             title.setGeometry(75, 10, 415, 60)

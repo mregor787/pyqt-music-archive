@@ -54,3 +54,24 @@ class SqlManager:
         query = f'SELECT * FROM {table} WHERE {parameter} {sign} ?'
         res = self.cur.execute(query, (value,))
         return self.get_dicts(res)
+
+    def get_artist_by_album(self, album: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM artist WHERE id = (SELECT artist 
+            FROM album WHERE title = ?)''', (album,)
+        )
+        return self.get_dicts(res)
+
+    def get_artist_by_track(self, track: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM artist WHERE id = (SELECT artist 
+            FROM track WHERE title = ?)''', (track,)
+        )
+        return self.get_dicts(res)
+
+    def get_album_by_track(self, track: str) -> List[dict]:
+        res = self.cur.execute(
+            f'''SELECT * FROM album WHERE id = (SELECT album
+            FROM track WHERE title = ?)''', (track,)
+        )
+        return self.get_dicts(res)
