@@ -28,6 +28,150 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName("stackedWidget")
+        self.loginPage = QtWidgets.QWidget()
+        self.loginPage.setObjectName("loginPage")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.loginPage)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.logForm = QtWidgets.QWidget(self.loginPage)
+        self.logForm.setMaximumSize(QtCore.QSize(300, 400))
+        self.logForm.setStyleSheet("QWidget#logForm {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    border: 1px solid rgb(37, 39, 48);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.logForm.setObjectName("logForm")
+        self.logTitle = QtWidgets.QLabel(self.logForm)
+        self.logTitle.setGeometry(QtCore.QRect(90, 10, 120, 70))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        self.logTitle.setFont(font)
+        self.logTitle.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.logTitle.setObjectName("logTitle")
+        self.logDescription = QtWidgets.QLabel(self.logForm)
+        self.logDescription.setGeometry(QtCore.QRect(25, 90, 250, 50))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.logDescription.setFont(font)
+        self.logDescription.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 5px;\n"
+"    padding-right: 5px;\n"
+"}")
+        self.logDescription.setWordWrap(True)
+        self.logDescription.setObjectName("logDescription")
+        self.logLine = QtWidgets.QFrame(self.logForm)
+        self.logLine.setGeometry(QtCore.QRect(0, 155, 300, 20))
+        self.logLine.setStyleSheet("QFrame#logLine {\n"
+"    color: rgb(130, 130, 130);\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    margin-left: 20px;\n"
+"    margin-right: 20px;\n"
+"}")
+        self.logLine.setFrameShape(QtWidgets.QFrame.HLine)
+        self.logLine.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.logLine.setObjectName("logLine")
+        self.logUsernameInput = QtWidgets.QLineEdit(self.logForm)
+        self.logUsernameInput.setGeometry(QtCore.QRect(30, 190, 240, 30))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.logUsernameInput.setFont(font)
+        self.logUsernameInput.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(105, 105, 105);\n"
+"    padding-left: 20px;\n"
+"    padding-right: 20px;\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(85, 170, 255);\n"
+"    background-color: rgb(115, 115, 115);\n"
+"}")
+        self.logUsernameInput.setText("")
+        self.logUsernameInput.setObjectName("logUsernameInput")
+        self.logPasswordInput = QtWidgets.QLineEdit(self.logForm)
+        self.logPasswordInput.setGeometry(QtCore.QRect(30, 230, 240, 30))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.logPasswordInput.setFont(font)
+        self.logPasswordInput.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(105, 105, 105);\n"
+"    padding-left: 20px;\n"
+"    padding-right: 20px;\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(85, 170, 255);\n"
+"    background-color: rgb(115, 115, 115);\n"
+"}")
+        self.logPasswordInput.setText("")
+        self.logPasswordInput.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.logPasswordInput.setObjectName("logPasswordInput")
+        self.logButton = QtWidgets.QPushButton(self.logForm)
+        self.logButton.setGeometry(QtCore.QRect(30, 270, 240, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.logButton.setFont(font)
+        self.logButton.setStyleSheet("QPushButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.logButton.setObjectName("logButton")
+        self.logLine_2 = QtWidgets.QFrame(self.logForm)
+        self.logLine_2.setGeometry(QtCore.QRect(0, 315, 300, 20))
+        self.logLine_2.setStyleSheet("QFrame#logLine_2 {\n"
+"    color: rgb(130, 130, 130);\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    margin-left: 20px;\n"
+"    margin-right: 20px;\n"
+"}")
+        self.logLine_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.logLine_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.logLine_2.setObjectName("logLine_2")
+        self.logDescription_2 = QtWidgets.QLabel(self.logForm)
+        self.logDescription_2.setGeometry(QtCore.QRect(10, 348, 181, 21))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.logDescription_2.setFont(font)
+        self.logDescription_2.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 5px;\n"
+"    padding-right: 5px;\n"
+"}")
+        self.logDescription_2.setWordWrap(True)
+        self.logDescription_2.setObjectName("logDescription_2")
+        self.logToRegButton = QtWidgets.QPushButton(self.logForm)
+        self.logToRegButton.setGeometry(QtCore.QRect(190, 345, 100, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.logToRegButton.setFont(font)
+        self.logToRegButton.setStyleSheet("QPushButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    background-color: rgb(30, 109, 207);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(70, 149, 230);\n"
+"}")
+        self.logToRegButton.setObjectName("logToRegButton")
+        self.horizontalLayout_3.addWidget(self.logForm)
+        self.stackedWidget.addWidget(self.loginPage)
         self.registerPage = QtWidgets.QWidget()
         self.registerPage.setObjectName("registerPage")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.registerPage)
@@ -191,150 +335,6 @@ class Ui_MainWindow(object):
         self.regToLogButton.setObjectName("regToLogButton")
         self.horizontalLayout_2.addWidget(self.regForm)
         self.stackedWidget.addWidget(self.registerPage)
-        self.loginPage = QtWidgets.QWidget()
-        self.loginPage.setObjectName("loginPage")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.loginPage)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.logForm = QtWidgets.QWidget(self.loginPage)
-        self.logForm.setMaximumSize(QtCore.QSize(300, 400))
-        self.logForm.setStyleSheet("QWidget#logForm {\n"
-"    background-color: rgb(130, 130, 130);\n"
-"    border: 1px solid rgb(37, 39, 48);\n"
-"    border-radius: 12px;\n"
-"}")
-        self.logForm.setObjectName("logForm")
-        self.logTitle = QtWidgets.QLabel(self.logForm)
-        self.logTitle.setGeometry(QtCore.QRect(90, 10, 120, 70))
-        font = QtGui.QFont()
-        font.setPointSize(24)
-        self.logTitle.setFont(font)
-        self.logTitle.setStyleSheet("QLabel {\n"
-"    background-color: rgb(130, 130, 130);\n"
-"    padding-left: 10px;\n"
-"    padding-right: 10px;\n"
-"}")
-        self.logTitle.setObjectName("logTitle")
-        self.logDescription = QtWidgets.QLabel(self.logForm)
-        self.logDescription.setGeometry(QtCore.QRect(25, 90, 250, 50))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.logDescription.setFont(font)
-        self.logDescription.setStyleSheet("QLabel {\n"
-"    background-color: rgb(130, 130, 130);\n"
-"    padding-left: 5px;\n"
-"    padding-right: 5px;\n"
-"}")
-        self.logDescription.setWordWrap(True)
-        self.logDescription.setObjectName("logDescription")
-        self.logLine = QtWidgets.QFrame(self.logForm)
-        self.logLine.setGeometry(QtCore.QRect(0, 155, 300, 20))
-        self.logLine.setStyleSheet("QFrame#logLine {\n"
-"    color: rgb(130, 130, 130);\n"
-"    background-color: rgb(130, 130, 130);\n"
-"    margin-left: 20px;\n"
-"    margin-right: 20px;\n"
-"}")
-        self.logLine.setFrameShape(QtWidgets.QFrame.HLine)
-        self.logLine.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.logLine.setObjectName("logLine")
-        self.logUsernameInput = QtWidgets.QLineEdit(self.logForm)
-        self.logUsernameInput.setGeometry(QtCore.QRect(30, 190, 240, 30))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.logUsernameInput.setFont(font)
-        self.logUsernameInput.setStyleSheet("QLineEdit {\n"
-"    border: 2px solid rgb(30, 32, 41);\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(105, 105, 105);\n"
-"    padding-left: 20px;\n"
-"    padding-right: 20px;\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(60, 62, 71);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(85, 170, 255);\n"
-"    background-color: rgb(115, 115, 115);\n"
-"}")
-        self.logUsernameInput.setText("")
-        self.logUsernameInput.setObjectName("logUsernameInput")
-        self.logPasswordInput = QtWidgets.QLineEdit(self.logForm)
-        self.logPasswordInput.setGeometry(QtCore.QRect(30, 230, 240, 30))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.logPasswordInput.setFont(font)
-        self.logPasswordInput.setStyleSheet("QLineEdit {\n"
-"    border: 2px solid rgb(30, 32, 41);\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(105, 105, 105);\n"
-"    padding-left: 20px;\n"
-"    padding-right: 20px;\n"
-"}\n"
-"QLineEdit:hover {\n"
-"    border: 2px solid rgb(60, 62, 71);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid rgb(85, 170, 255);\n"
-"    background-color: rgb(115, 115, 115);\n"
-"}")
-        self.logPasswordInput.setText("")
-        self.logPasswordInput.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.logPasswordInput.setObjectName("logPasswordInput")
-        self.logButton = QtWidgets.QPushButton(self.logForm)
-        self.logButton.setGeometry(QtCore.QRect(30, 270, 240, 30))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.logButton.setFont(font)
-        self.logButton.setStyleSheet("QPushButton {\n"
-"    border: 2px solid rgb(37, 39, 48);\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(5, 110, 0);\n"
-"}\n"
-"QPushButton:hover {\n"
-"    border: 2px solid rgb(60, 62, 71);\n"
-"    background-color: rgb(20, 135, 0);\n"
-"}")
-        self.logButton.setObjectName("logButton")
-        self.logLine_2 = QtWidgets.QFrame(self.logForm)
-        self.logLine_2.setGeometry(QtCore.QRect(0, 315, 300, 20))
-        self.logLine_2.setStyleSheet("QFrame#logLine_2 {\n"
-"    color: rgb(130, 130, 130);\n"
-"    background-color: rgb(130, 130, 130);\n"
-"    margin-left: 20px;\n"
-"    margin-right: 20px;\n"
-"}")
-        self.logLine_2.setFrameShape(QtWidgets.QFrame.HLine)
-        self.logLine_2.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.logLine_2.setObjectName("logLine_2")
-        self.logDescription_2 = QtWidgets.QLabel(self.logForm)
-        self.logDescription_2.setGeometry(QtCore.QRect(10, 348, 181, 21))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.logDescription_2.setFont(font)
-        self.logDescription_2.setStyleSheet("QLabel {\n"
-"    background-color: rgb(130, 130, 130);\n"
-"    padding-left: 5px;\n"
-"    padding-right: 5px;\n"
-"}")
-        self.logDescription_2.setWordWrap(True)
-        self.logDescription_2.setObjectName("logDescription_2")
-        self.logToRegButton = QtWidgets.QPushButton(self.logForm)
-        self.logToRegButton.setGeometry(QtCore.QRect(190, 345, 100, 30))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.logToRegButton.setFont(font)
-        self.logToRegButton.setStyleSheet("QPushButton {\n"
-"    border: 2px solid rgb(37, 39, 48);\n"
-"    background-color: rgb(30, 109, 207);\n"
-"    border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    border: 2px solid rgb(60, 62, 71);\n"
-"    background-color: rgb(70, 149, 230);\n"
-"}")
-        self.logToRegButton.setObjectName("logToRegButton")
-        self.horizontalLayout_3.addWidget(self.logForm)
-        self.stackedWidget.addWidget(self.loginPage)
         self.horizontalLayout.addWidget(self.stackedWidget)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -345,6 +345,13 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "PyQt Music Archive"))
+        self.logTitle.setText(_translate("MainWindow", "Login"))
+        self.logDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">Welcome back! Please, login to access the PyQt Music Archive.</span></p></body></html>"))
+        self.logUsernameInput.setPlaceholderText(_translate("MainWindow", "Username"))
+        self.logPasswordInput.setPlaceholderText(_translate("MainWindow", "Password"))
+        self.logButton.setText(_translate("MainWindow", "Login"))
+        self.logDescription_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Don\'t have an account?</span></p></body></html>"))
+        self.logToRegButton.setText(_translate("MainWindow", "Register"))
         self.regTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">Register</span></p></body></html>"))
         self.regDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">Please fill in this form to create an account in the PyQt Music Archive.</span></p></body></html>"))
         self.regUsernameInput.setPlaceholderText(_translate("MainWindow", "Username"))
@@ -353,10 +360,3 @@ class Ui_MainWindow(object):
         self.regButton.setText(_translate("MainWindow", "Register"))
         self.regDescription_2.setText(_translate("MainWindow", "Already have an account?"))
         self.regToLogButton.setText(_translate("MainWindow", "Login"))
-        self.logTitle.setText(_translate("MainWindow", "Login"))
-        self.logDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">Welcome back! Please, login to access the PyQt Music Archive.</span></p></body></html>"))
-        self.logUsernameInput.setPlaceholderText(_translate("MainWindow", "Username"))
-        self.logPasswordInput.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.logButton.setText(_translate("MainWindow", "Login"))
-        self.logDescription_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Don\'t have an account?</span></p></body></html>"))
-        self.logToRegButton.setText(_translate("MainWindow", "Register"))

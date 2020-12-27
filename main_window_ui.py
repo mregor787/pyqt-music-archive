@@ -58,14 +58,14 @@ class Ui_MainWindow(object):
         self.menuTitle.setObjectName("menuTitle")
         self.toProfileButton = QWidgetClickable(self.menuWidget)
         self.toProfileButton.setGeometry(QtCore.QRect(70, 180, 230, 180))
-        self.toProfileButton.setStyleSheet("#menuWidget > #toProfileButton {\n"
+        self.toProfileButton.setStyleSheet("#toProfileButton {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > #toProfileButton:hover {\n"
+"#toProfileButton:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
@@ -91,14 +91,14 @@ class Ui_MainWindow(object):
         self.profileButtonDescription.setObjectName("profileButtonDescription")
         self.toSearchButton = QWidgetClickable(self.menuWidget)
         self.toSearchButton.setGeometry(QtCore.QRect(350, 180, 230, 180))
-        self.toSearchButton.setStyleSheet("#menuWidget > #toSearchButton {\n"
+        self.toSearchButton.setStyleSheet("#toSearchButton {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > #toSearchButton:hover {\n"
+"#toSearchButton:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
@@ -124,60 +124,79 @@ class Ui_MainWindow(object):
         self.searchButtonDescription.setObjectName("searchButtonDescription")
         self.widget_3 = QWidgetClickable(self.menuWidget)
         self.widget_3.setGeometry(QtCore.QRect(630, 180, 230, 180))
-        self.widget_3.setStyleSheet("#menuWidget > #widget_3 {\n"
+        self.widget_3.setStyleSheet("#widget_3 {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > #widget_3:hover {\n"
+"#widget_3:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
         self.widget_3.setObjectName("widget_3")
         self.widget_4 = QWidgetClickable(self.menuWidget)
         self.widget_4.setGeometry(QtCore.QRect(70, 410, 230, 180))
-        self.widget_4.setStyleSheet("#menuWidget > #widget_4 {\n"
+        self.widget_4.setStyleSheet("#widget_4 {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > #widget_4:hover {\n"
+"#widget_4:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
         self.widget_4.setObjectName("widget_4")
         self.widget_5 = QWidgetClickable(self.menuWidget)
         self.widget_5.setGeometry(QtCore.QRect(350, 410, 230, 180))
-        self.widget_5.setStyleSheet("#menuWidget > #widget_5 {\n"
+        self.widget_5.setStyleSheet("#widget_5 {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > #widget_5:hover {\n"
+"#widget_5:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
         self.widget_5.setObjectName("widget_5")
-        self.widget_6 = QWidgetClickable(self.menuWidget)
-        self.widget_6.setGeometry(QtCore.QRect(630, 410, 230, 180))
-        self.widget_6.setStyleSheet("#menuWidget > #widget_6 {\n"
+        self.exitButton = QWidgetClickable(self.menuWidget)
+        self.exitButton.setGeometry(QtCore.QRect(630, 410, 230, 180))
+        self.exitButton.setStyleSheet("#exitButton {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#menuWidget > #widget_6:hover {\n"
+"#exitButton:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.widget_6.setObjectName("widget_6")
+        self.exitButton.setObjectName("exitButton")
+        self.exitButtonTitle = QtWidgets.QLabel(self.exitButton)
+        self.exitButtonTitle.setGeometry(QtCore.QRect(60, 10, 110, 40))
+        self.exitButtonTitle.setStyleSheet("QLabel {\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.exitButtonTitle.setObjectName("exitButtonTitle")
+        self.exitButtonPic = QtWidgets.QLabel(self.exitButton)
+        self.exitButtonPic.setGeometry(QtCore.QRect(10, 70, 70, 70))
+        self.exitButtonPic.setStyleSheet("")
+        self.exitButtonPic.setText("")
+        self.exitButtonPic.setPixmap(QtGui.QPixmap("images/user_interface/exit.png"))
+        self.exitButtonPic.setScaledContents(True)
+        self.exitButtonPic.setObjectName("exitButtonPic")
+        self.exitButtonDescription = QtWidgets.QLabel(self.exitButton)
+        self.exitButtonDescription.setGeometry(QtCore.QRect(85, 60, 140, 90))
+        self.exitButtonDescription.setStyleSheet("")
+        self.exitButtonDescription.setWordWrap(True)
+        self.exitButtonDescription.setObjectName("exitButtonDescription")
         self.horizontalLayout_2.addWidget(self.menuWidget)
         self.stackedWidget.addWidget(self.menuPage)
         self.profilePage = QtWidgets.QWidget()
@@ -922,6 +941,8 @@ class Ui_MainWindow(object):
         self.profileButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Editing your profile &amp; account info. Privacy settings.</span></p></body></html>"))
         self.searchButtonTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt;\">Search</span></p></body></html>"))
         self.searchButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Search for content in the database, such as tracks, artists, albums, etc.</span></p></body></html>"))
+        self.exitButtonTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt;\">Exit</span></p></body></html>"))
+        self.exitButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Exit the PyQt Music Archive: log out of current user &amp; go to the login page.</span></p></body></html>"))
         self.profileMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Anonymous</span></p></body></html>"))
         self.profileTitle_1.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt;\">Profile &amp; Account Information</span></p></body></html>"))
         self.profileIconLabel_1.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">Your Profile Icon</span></p></body></html>"))

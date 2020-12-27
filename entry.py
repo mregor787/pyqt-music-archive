@@ -26,10 +26,10 @@ class Entry(Window, Ui_MainWindow):
 
     def setupButtons(self):
         self.regToLogButton.clicked.connect(
-            lambda: self.pageSwitch(self.stackedWidget, 1)
+            lambda: self.pageSwitch(self.stackedWidget, 0)
         )
         self.logToRegButton.clicked.connect(
-            lambda: self.pageSwitch(self.stackedWidget, 0)
+            lambda: self.pageSwitch(self.stackedWidget, 1)
         )
         self.regButton.clicked.connect(self.registerUser)
         self.logButton.clicked.connect(self.loginUser)

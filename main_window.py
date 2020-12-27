@@ -14,6 +14,7 @@ class MainWindow(Window, Ui_MainWindow):
     def setupButtons(self):
         self.toProfileButton.clicked.connect(self.toProfile)
         self.toSearchButton.clicked.connect(self.toSearch)
+        self.exitButton.clicked.connect(self.logout)
         for btn in [self.profileBackButton, self.searchBackButton,
                     self.artistBackButton, self.albumBackButton]:
             btn.clicked.connect(
@@ -49,6 +50,10 @@ class MainWindow(Window, Ui_MainWindow):
 
     def toSearch(self):
         self.pageSwitch(self.stackedWidget, 2)
+
+    def logout(self):
+        self.app.setUser('')
+        self.app.changeWindow('entry')
 
     def profileSaveInfo(self):
         update_data = {
