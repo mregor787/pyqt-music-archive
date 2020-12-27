@@ -735,7 +735,11 @@ class Ui_MainWindow(object):
         self.artistLogo.setObjectName("artistLogo")
         self.artistAlbumsScrollArea = QtWidgets.QScrollArea(self.artistWidget)
         self.artistAlbumsScrollArea.setGeometry(QtCore.QRect(255, 170, 650, 200))
-        self.artistAlbumsScrollArea.setStyleSheet("#artistAlbumsScrollArea {\n"
+        self.artistAlbumsScrollArea.setStyleSheet("QScrollBar {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}\n"
+"#artistAlbumsScrollArea {\n"
+"    background-color: rgb(105, 105, 105);\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "}")
@@ -783,7 +787,11 @@ class Ui_MainWindow(object):
         self.artistTitle_1.setObjectName("artistTitle_1")
         self.artistTracksScrollArea = QtWidgets.QScrollArea(self.artistWidget)
         self.artistTracksScrollArea.setGeometry(QtCore.QRect(255, 460, 650, 200))
-        self.artistTracksScrollArea.setStyleSheet("#artistTracksScrollArea {\n"
+        self.artistTracksScrollArea.setStyleSheet("QScrollBar {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}\n"
+"#artistTracksScrollArea {\n"
+"    background-color: rgb(105, 105, 105);\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "}")
@@ -900,7 +908,11 @@ class Ui_MainWindow(object):
         self.albumTitle_3.setObjectName("albumTitle_3")
         self.albumTracksScrollArea = QtWidgets.QScrollArea(self.albumWidget)
         self.albumTracksScrollArea.setGeometry(QtCore.QRect(255, 340, 650, 320))
-        self.albumTracksScrollArea.setStyleSheet("#albumTracksScrollArea {\n"
+        self.albumTracksScrollArea.setStyleSheet("QScrollBar {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}\n"
+"#albumTracksScrollArea {\n"
+"    background-color: rgb(105, 105, 105);\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "}")
@@ -917,6 +929,219 @@ class Ui_MainWindow(object):
         self.albumTracksScrollArea.setWidget(self.albumTracksScrollAreaWidgetContents)
         self.horizontalLayout_6.addWidget(self.albumWidget)
         self.stackedWidget.addWidget(self.albumPage)
+        self.genrePage = QtWidgets.QWidget()
+        self.genrePage.setStyleSheet("QWidget#genrePage {\n"
+"    background-color: rgb(46, 52, 54);\n"
+"}")
+        self.genrePage.setObjectName("genrePage")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.genrePage)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.genreWidget = QtWidgets.QWidget(self.genrePage)
+        self.genreWidget.setMaximumSize(QtCore.QSize(930, 690))
+        self.genreWidget.setStyleSheet("QWidget#genreWidget {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    border: 1px solid rgb(37, 39, 48);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.genreWidget.setObjectName("genreWidget")
+        self.genreMainTitle = QtWidgets.QLabel(self.genreWidget)
+        self.genreMainTitle.setGeometry(QtCore.QRect(5, 10, 920, 90))
+        self.genreMainTitle.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.genreMainTitle.setObjectName("genreMainTitle")
+        self.genreLogo = QtWidgets.QLabel(self.genreWidget)
+        self.genreLogo.setGeometry(QtCore.QRect(50, 170, 160, 160))
+        self.genreLogo.setText("")
+        self.genreLogo.setPixmap(QtGui.QPixmap("images/user_interface/profile.png"))
+        self.genreLogo.setScaledContents(True)
+        self.genreLogo.setObjectName("genreLogo")
+        self.genreBackButton = QtWidgets.QPushButton(self.genreWidget)
+        self.genreBackButton.setGeometry(QtCore.QRect(20, 620, 160, 50))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.genreBackButton.setFont(font)
+        self.genreBackButton.setStyleSheet("#genreBackButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"#genreBackButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.genreBackButton.setObjectName("genreBackButton")
+        self.genreTitle_1 = QtWidgets.QLabel(self.genreWidget)
+        self.genreTitle_1.setGeometry(QtCore.QRect(20, 100, 220, 50))
+        self.genreTitle_1.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.genreTitle_1.setObjectName("genreTitle_1")
+        self.genreTitle_2 = QtWidgets.QLabel(self.genreWidget)
+        self.genreTitle_2.setGeometry(QtCore.QRect(470, 100, 220, 50))
+        self.genreTitle_2.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.genreTitle_2.setObjectName("genreTitle_2")
+        self.genreTracksScrollArea = QtWidgets.QScrollArea(self.genreWidget)
+        self.genreTracksScrollArea.setGeometry(QtCore.QRect(255, 170, 650, 490))
+        self.genreTracksScrollArea.setStyleSheet("QScrollBar {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}\n"
+"#genreTracksScrollArea {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"    border: 2px solid rgb(30, 32, 41);\n"
+"    border-radius: 10px;\n"
+"}")
+        self.genreTracksScrollArea.setWidgetResizable(True)
+        self.genreTracksScrollArea.setObjectName("genreTracksScrollArea")
+        self.genreTracksScrollAreaWidgetContents = QtWidgets.QWidget()
+        self.genreTracksScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 646, 486))
+        self.genreTracksScrollAreaWidgetContents.setStyleSheet("#genreTracksScrollAreaWidgetContents {\n"
+"    background-color: rgb(105, 105, 105);\n"
+"}")
+        self.genreTracksScrollAreaWidgetContents.setObjectName("genreTracksScrollAreaWidgetContents")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.genreTracksScrollAreaWidgetContents)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.genreTracksScrollArea.setWidget(self.genreTracksScrollAreaWidgetContents)
+        self.horizontalLayout_8.addWidget(self.genreWidget)
+        self.stackedWidget.addWidget(self.genrePage)
+        self.trackPage = QtWidgets.QWidget()
+        self.trackPage.setStyleSheet("QWidget#trackPage {\n"
+"    background-color: rgb(46, 52, 54);\n"
+"}")
+        self.trackPage.setObjectName("trackPage")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.trackPage)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.trackWidget = QtWidgets.QWidget(self.trackPage)
+        self.trackWidget.setMaximumSize(QtCore.QSize(930, 690))
+        self.trackWidget.setStyleSheet("QWidget#trackWidget {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    border: 1px solid rgb(37, 39, 48);\n"
+"    border-radius: 12px;\n"
+"}")
+        self.trackWidget.setObjectName("trackWidget")
+        self.trackMainTitle = QtWidgets.QLabel(self.trackWidget)
+        self.trackMainTitle.setGeometry(QtCore.QRect(5, 10, 920, 90))
+        self.trackMainTitle.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.trackMainTitle.setObjectName("trackMainTitle")
+        self.trackTitle_1 = QtWidgets.QLabel(self.trackWidget)
+        self.trackTitle_1.setGeometry(QtCore.QRect(355, 100, 220, 50))
+        self.trackTitle_1.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.trackTitle_1.setObjectName("trackTitle_1")
+        self.trackBackButton = QtWidgets.QPushButton(self.trackWidget)
+        self.trackBackButton.setGeometry(QtCore.QRect(20, 620, 160, 50))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.trackBackButton.setFont(font)
+        self.trackBackButton.setStyleSheet("#trackBackButton {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(5, 110, 0);\n"
+"}\n"
+"#trackBackButton:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(20, 135, 0);\n"
+"}")
+        self.trackBackButton.setObjectName("trackBackButton")
+        self.trackTitle_2 = QtWidgets.QLabel(self.trackWidget)
+        self.trackTitle_2.setGeometry(QtCore.QRect(355, 260, 220, 50))
+        self.trackTitle_2.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.trackTitle_2.setObjectName("trackTitle_2")
+        self.trackArtistWidget = QWidgetClickable(self.trackWidget)
+        self.trackArtistWidget.setGeometry(QtCore.QRect(215, 160, 500, 80))
+        self.trackArtistWidget.setStyleSheet("#trackArtistWidget {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(192, 57, 43);\n"
+"}\n"
+"#trackArtistWidget:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(231, 76, 60);\n"
+"}")
+        self.trackArtistWidget.setObjectName("trackArtistWidget")
+        self.trackArtistLogo = QtWidgets.QLabel(self.trackArtistWidget)
+        self.trackArtistLogo.setGeometry(QtCore.QRect(10, 10, 60, 60))
+        self.trackArtistLogo.setText("")
+        self.trackArtistLogo.setPixmap(QtGui.QPixmap("images/user_interface/profile.png"))
+        self.trackArtistLogo.setScaledContents(True)
+        self.trackArtistLogo.setObjectName("trackArtistLogo")
+        self.trackArtistName = QtWidgets.QLabel(self.trackArtistWidget)
+        self.trackArtistName.setGeometry(QtCore.QRect(75, 10, 415, 60))
+        self.trackArtistName.setWordWrap(True)
+        self.trackArtistName.setObjectName("trackArtistName")
+        self.trackAlbumWidget = QWidgetClickable(self.trackWidget)
+        self.trackAlbumWidget.setGeometry(QtCore.QRect(215, 320, 500, 80))
+        self.trackAlbumWidget.setStyleSheet("#trackAlbumWidget {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(41, 128, 185);\n"
+"}\n"
+"#trackAlbumWidget:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(52, 152, 219);\n"
+"}")
+        self.trackAlbumWidget.setObjectName("trackAlbumWidget")
+        self.trackAlbumLogo = QtWidgets.QLabel(self.trackAlbumWidget)
+        self.trackAlbumLogo.setGeometry(QtCore.QRect(10, 10, 60, 60))
+        self.trackAlbumLogo.setText("")
+        self.trackAlbumLogo.setPixmap(QtGui.QPixmap("images/user_interface/profile.png"))
+        self.trackAlbumLogo.setScaledContents(True)
+        self.trackAlbumLogo.setObjectName("trackAlbumLogo")
+        self.trackAlbumTitle = QtWidgets.QLabel(self.trackAlbumWidget)
+        self.trackAlbumTitle.setGeometry(QtCore.QRect(75, 10, 415, 60))
+        self.trackAlbumTitle.setWordWrap(True)
+        self.trackAlbumTitle.setObjectName("trackAlbumTitle")
+        self.trackTitle_3 = QtWidgets.QLabel(self.trackWidget)
+        self.trackTitle_3.setGeometry(QtCore.QRect(355, 420, 220, 50))
+        self.trackTitle_3.setStyleSheet("QLabel {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.trackTitle_3.setObjectName("trackTitle_3")
+        self.trackGenreWidget = QWidgetClickable(self.trackWidget)
+        self.trackGenreWidget.setGeometry(QtCore.QRect(215, 480, 500, 80))
+        self.trackGenreWidget.setStyleSheet("#trackGenreWidget {\n"
+"    border: 2px solid rgb(37, 39, 48);\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(142, 68, 173);\n"
+"}\n"
+"#trackGenreWidget:hover {\n"
+"    border: 2px solid rgb(60, 62, 71);\n"
+"    background-color: rgb(155, 89, 182);\n"
+"}")
+        self.trackGenreWidget.setObjectName("trackGenreWidget")
+        self.trackGenreLogo = QtWidgets.QLabel(self.trackGenreWidget)
+        self.trackGenreLogo.setGeometry(QtCore.QRect(10, 10, 60, 60))
+        self.trackGenreLogo.setText("")
+        self.trackGenreLogo.setPixmap(QtGui.QPixmap("images/user_interface/profile.png"))
+        self.trackGenreLogo.setScaledContents(True)
+        self.trackGenreLogo.setObjectName("trackGenreLogo")
+        self.trackGenreName = QtWidgets.QLabel(self.trackGenreWidget)
+        self.trackGenreName.setGeometry(QtCore.QRect(75, 10, 415, 60))
+        self.trackGenreName.setWordWrap(True)
+        self.trackGenreName.setObjectName("trackGenreName")
+        self.horizontalLayout_9.addWidget(self.trackWidget)
+        self.stackedWidget.addWidget(self.trackPage)
         self.horizontalLayout.addWidget(self.stackedWidget)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -999,4 +1224,16 @@ class Ui_MainWindow(object):
         self.albumArtistName.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">ArtistName</span></p></body></html>"))
         self.albumTitle_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Artist</span></p></body></html>"))
         self.albumTitle_3.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Tracks</span></p></body></html>"))
+        self.genreMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Genre</span></p></body></html>"))
+        self.genreBackButton.setText(_translate("MainWindow", "Back to Main Menu"))
+        self.genreTitle_1.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Logo</span></p></body></html>"))
+        self.genreTitle_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Tracks</span></p></body></html>"))
+        self.trackMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Track</span></p></body></html>"))
+        self.trackTitle_1.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Artist</span></p></body></html>"))
+        self.trackBackButton.setText(_translate("MainWindow", "Back to Main Menu"))
+        self.trackTitle_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Album</span></p></body></html>"))
+        self.trackArtistName.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">ArtistName</span></p></body></html>"))
+        self.trackAlbumTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">AlbumTitle</span></p></body></html>"))
+        self.trackTitle_3.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:26pt;\">Genre</span></p></body></html>"))
+        self.trackGenreName.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">GenreName</span></p></body></html>"))
 from qwidget_clickable import QWidgetClickable
