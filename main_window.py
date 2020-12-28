@@ -166,6 +166,9 @@ class MainWindow(Window, Ui_MainWindow):
                     data = [item for item in data if item in part_data]
         else:
             data = self.get_query_part_data(query, table)
+        box = self.searchScrollArea.widget()
+        for obj in box.findChildren(QWidget):
+            obj.deleteLater()
         self.addDataToScrollArea(data, table, self.searchScrollArea)
 
     def addDataToWidget(self, data: dict, page_table: str, widget_table: str, widget: QWidgetClickable):
