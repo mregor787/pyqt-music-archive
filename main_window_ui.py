@@ -122,48 +122,105 @@ class Ui_MainWindow(object):
         self.searchButtonDescription.setStyleSheet("")
         self.searchButtonDescription.setWordWrap(True)
         self.searchButtonDescription.setObjectName("searchButtonDescription")
-        self.widget_3 = QWidgetClickable(self.menuWidget)
-        self.widget_3.setGeometry(QtCore.QRect(630, 180, 230, 180))
-        self.widget_3.setStyleSheet("#widget_3 {\n"
+        self.createButton = QWidgetClickable(self.menuWidget)
+        self.createButton.setGeometry(QtCore.QRect(630, 180, 230, 180))
+        self.createButton.setStyleSheet("#createButton {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#widget_3:hover {\n"
+"#createButton:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.widget_3.setObjectName("widget_3")
-        self.widget_4 = QWidgetClickable(self.menuWidget)
-        self.widget_4.setGeometry(QtCore.QRect(70, 410, 230, 180))
-        self.widget_4.setStyleSheet("#widget_4 {\n"
+        self.createButton.setObjectName("createButton")
+        self.createButtonTitle = QtWidgets.QLabel(self.createButton)
+        self.createButtonTitle.setGeometry(QtCore.QRect(60, 10, 110, 40))
+        self.createButtonTitle.setStyleSheet("QLabel {\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.createButtonTitle.setObjectName("createButtonTitle")
+        self.createButtonPic = QtWidgets.QLabel(self.createButton)
+        self.createButtonPic.setGeometry(QtCore.QRect(10, 70, 70, 70))
+        self.createButtonPic.setStyleSheet("")
+        self.createButtonPic.setText("")
+        self.createButtonPic.setPixmap(QtGui.QPixmap("images/user_interface/create.png"))
+        self.createButtonPic.setScaledContents(True)
+        self.createButtonPic.setObjectName("createButtonPic")
+        self.createButtonDescription = QtWidgets.QLabel(self.createButton)
+        self.createButtonDescription.setGeometry(QtCore.QRect(85, 60, 140, 90))
+        self.createButtonDescription.setStyleSheet("")
+        self.createButtonDescription.setWordWrap(True)
+        self.createButtonDescription.setObjectName("createButtonDescription")
+        self.emailButton = QWidgetClickable(self.menuWidget)
+        self.emailButton.setGeometry(QtCore.QRect(70, 410, 230, 180))
+        self.emailButton.setStyleSheet("#emailButton {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#widget_4:hover {\n"
+"#emailButton:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.widget_4.setObjectName("widget_4")
-        self.widget_5 = QWidgetClickable(self.menuWidget)
-        self.widget_5.setGeometry(QtCore.QRect(350, 410, 230, 180))
-        self.widget_5.setStyleSheet("#widget_5 {\n"
+        self.emailButton.setObjectName("emailButton")
+        self.profileButtonPic_2 = QtWidgets.QLabel(self.emailButton)
+        self.profileButtonPic_2.setGeometry(QtCore.QRect(10, 70, 70, 70))
+        self.profileButtonPic_2.setStyleSheet("")
+        self.profileButtonPic_2.setText("")
+        self.profileButtonPic_2.setPixmap(QtGui.QPixmap("images/user_interface/email.png"))
+        self.profileButtonPic_2.setScaledContents(True)
+        self.profileButtonPic_2.setObjectName("profileButtonPic_2")
+        self.profileButtonDescription_2 = QtWidgets.QLabel(self.emailButton)
+        self.profileButtonDescription_2.setGeometry(QtCore.QRect(85, 60, 140, 90))
+        self.profileButtonDescription_2.setStyleSheet("")
+        self.profileButtonDescription_2.setWordWrap(True)
+        self.profileButtonDescription_2.setObjectName("profileButtonDescription_2")
+        self.profileButtonTitle_2 = QtWidgets.QLabel(self.emailButton)
+        self.profileButtonTitle_2.setGeometry(QtCore.QRect(60, 10, 110, 40))
+        self.profileButtonTitle_2.setStyleSheet("QLabel {\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.profileButtonTitle_2.setObjectName("profileButtonTitle_2")
+        self.favoritesButton = QWidgetClickable(self.menuWidget)
+        self.favoritesButton.setGeometry(QtCore.QRect(350, 410, 230, 180))
+        self.favoritesButton.setStyleSheet("#favoritesButton {\n"
 "    border: 2px solid rgb(30, 32, 41);\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(105, 105, 105);\n"
 "    padding-left: 20px;\n"
 "    padding-right: 20px;\n"
 "}\n"
-"#widget_5:hover {\n"
+"#favoritesButton:hover {\n"
 "    border: 2px solid rgb(85, 170, 255);\n"
 "    background-color: rgb(115, 115, 115);\n"
 "}")
-        self.widget_5.setObjectName("widget_5")
+        self.favoritesButton.setObjectName("favoritesButton")
+        self.favoritesButtonPic = QtWidgets.QLabel(self.favoritesButton)
+        self.favoritesButtonPic.setGeometry(QtCore.QRect(10, 70, 70, 70))
+        self.favoritesButtonPic.setStyleSheet("")
+        self.favoritesButtonPic.setText("")
+        self.favoritesButtonPic.setPixmap(QtGui.QPixmap("images/user_interface/favorite.png"))
+        self.favoritesButtonPic.setScaledContents(True)
+        self.favoritesButtonPic.setObjectName("favoritesButtonPic")
+        self.favoritesButtonDescription = QtWidgets.QLabel(self.favoritesButton)
+        self.favoritesButtonDescription.setGeometry(QtCore.QRect(85, 60, 140, 90))
+        self.favoritesButtonDescription.setStyleSheet("")
+        self.favoritesButtonDescription.setWordWrap(True)
+        self.favoritesButtonDescription.setObjectName("favoritesButtonDescription")
+        self.favoritesButtonTitle = QtWidgets.QLabel(self.favoritesButton)
+        self.favoritesButtonTitle.setGeometry(QtCore.QRect(45, 10, 140, 40))
+        self.favoritesButtonTitle.setStyleSheet("QLabel {\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.favoritesButtonTitle.setObjectName("favoritesButtonTitle")
         self.exitButton = QWidgetClickable(self.menuWidget)
         self.exitButton.setGeometry(QtCore.QRect(630, 410, 230, 180))
         self.exitButton.setStyleSheet("#exitButton {\n"
@@ -1166,6 +1223,12 @@ class Ui_MainWindow(object):
         self.profileButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Editing your profile &amp; account info. Privacy settings.</span></p></body></html>"))
         self.searchButtonTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt;\">Search</span></p></body></html>"))
         self.searchButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Search for content in the database, such as tracks, artists, albums, etc.</span></p></body></html>"))
+        self.createButtonTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt;\">Create</span></p></body></html>"))
+        self.createButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Create new content &amp; add it to the database.</span></p></body></html>"))
+        self.profileButtonDescription_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Send messages to other users, receive it from them.</span></p></body></html>"))
+        self.profileButtonTitle_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt;\">Email</span></p></body></html>"))
+        self.favoritesButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Get the pages you have chosen as your favorites.</span></p></body></html>"))
+        self.favoritesButtonTitle.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt;\">Favorites</span></p></body></html>"))
         self.exitButtonTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt;\">Exit</span></p></body></html>"))
         self.exitButtonDescription.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Exit the PyQt Music Archive: log out of current user &amp; go to the login page.</span></p></body></html>"))
         self.profileMainTitle.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Anonymous</span></p></body></html>"))
