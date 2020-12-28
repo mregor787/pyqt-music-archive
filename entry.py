@@ -51,7 +51,7 @@ class Entry(Window, Ui_MainWindow):
             'date_of_birth': '', 'profile_type': 'public'
         }
         self.sql_manager.add_user(user_data)
-        self.pageSwitch(self.stackedWidget, 1)
+        self.pageSwitch(self.stackedWidget, 0)
 
     def loginUser(self):
         username = self.logUsernameInput.text()
